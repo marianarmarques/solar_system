@@ -1,7 +1,4 @@
 #include "headers/tags.hpp"
-#include "headers/point.hpp"
-#include <math.h>
-#include <map>
 
 static int drawMode = 0, eixos = 0;
 static float alpha, betha, radius;

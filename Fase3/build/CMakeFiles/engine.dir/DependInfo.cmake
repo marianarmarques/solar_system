@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine.cpp" "CMakeFiles/engine.dir/engine.cpp.o" "gcc" "CMakeFiles/engine.dir/engine.cpp.o.d"
-  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tags.cpp" "CMakeFiles/engine.dir/tags.cpp.o" "gcc" "CMakeFiles/engine.dir/tags.cpp.o.d"
-  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tinyxml2.cpp" "CMakeFiles/engine.dir/tinyxml2.cpp.o" "gcc" "CMakeFiles/engine.dir/tinyxml2.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp" "CMakeFiles/engine.dir/engine/engine.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/engine.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp" "CMakeFiles/engine.dir/engine/tags.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/tags.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp" "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o" "gcc" "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o.d"
   )
 
 # Targets to which this target links.

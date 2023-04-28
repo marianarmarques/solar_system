@@ -1,12 +1,9 @@
-#ifndef PLANE_HPP
-#define PLANE_HPP
+#ifndef BOX_HPP
+#define BOX_HPP
 
-#include "point.hpp"
-#include "primitive.hpp"
+#include "../../generator/headers/primitive.hpp"
 
-using namespace std;
-
-class Plane : public Primitive {
+class Box : public Primitive {
     private:
         float length;
         int grid;
@@ -17,7 +14,7 @@ class Plane : public Primitive {
 
         vector<Point> point_generator();
         
-        Plane(float length, int grid) {
+        Box(float length, int grid) {
             this->length = length;
             this->grid = grid;
         }

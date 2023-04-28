@@ -1,14 +1,8 @@
 #ifndef TORUS_HPP
 #define TORUS_HPP
 
-#include "point.hpp"
-#include "primitive.hpp"
-#include <math.h>
-#include <vector>
-#define _USE_MATH_DEFINES
-
-using namespace std;
-
+#include "../../generator/headers/primitive.hpp"
+#include <cmath>
 
 class Torus : public Primitive {
     private:

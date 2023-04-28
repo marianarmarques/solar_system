@@ -1,8 +1,8 @@
 #ifndef PRIMITIVE_HPP
 #define PRIMITIVE_HPP
 
+#include "../../utils/headers/point.hpp"
 #include <vector>
-#include "point.hpp"
 
 class Primitive {
     private:

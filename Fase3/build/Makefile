@@ -142,245 +142,245 @@ generator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
-bezier.o: bezier.cpp.o
-.PHONY : bezier.o
+engine/engine.o: engine/engine.cpp.o
+.PHONY : engine/engine.o
 
 # target to build an object file
-bezier.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/bezier.cpp.o
-.PHONY : bezier.cpp.o
+engine/engine.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.o
+.PHONY : engine/engine.cpp.o
 
-bezier.i: bezier.cpp.i
-.PHONY : bezier.i
+engine/engine.i: engine/engine.cpp.i
+.PHONY : engine/engine.i
 
 # target to preprocess a source file
-bezier.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/bezier.cpp.i
-.PHONY : bezier.cpp.i
+engine/engine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.i
+.PHONY : engine/engine.cpp.i
 
-bezier.s: bezier.cpp.s
-.PHONY : bezier.s
+engine/engine.s: engine/engine.cpp.s
+.PHONY : engine/engine.s
 
 # target to generate assembly for a file
-bezier.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/bezier.cpp.s
-.PHONY : bezier.cpp.s
+engine/engine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.s
+.PHONY : engine/engine.cpp.s
 
-box.o: box.cpp.o
-.PHONY : box.o
+engine/tags.o: engine/tags.cpp.o
+.PHONY : engine/tags.o
 
 # target to build an object file
-box.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.o
-.PHONY : box.cpp.o
+engine/tags.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.o
+.PHONY : engine/tags.cpp.o
 
-box.i: box.cpp.i
-.PHONY : box.i
+engine/tags.i: engine/tags.cpp.i
+.PHONY : engine/tags.i
 
 # target to preprocess a source file
-box.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.i
-.PHONY : box.cpp.i
+engine/tags.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.i
+.PHONY : engine/tags.cpp.i
 
-box.s: box.cpp.s
-.PHONY : box.s
+engine/tags.s: engine/tags.cpp.s
+.PHONY : engine/tags.s
 
 # target to generate assembly for a file
-box.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/box.cpp.s
-.PHONY : box.cpp.s
+engine/tags.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.s
+.PHONY : engine/tags.cpp.s
 
-cone.o: cone.cpp.o
-.PHONY : cone.o
+generator/bezier.o: generator/bezier.cpp.o
+.PHONY : generator/bezier.o
 
 # target to build an object file
-cone.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.o
-.PHONY : cone.cpp.o
+generator/bezier.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/bezier.cpp.o
+.PHONY : generator/bezier.cpp.o
 
-cone.i: cone.cpp.i
-.PHONY : cone.i
+generator/bezier.i: generator/bezier.cpp.i
+.PHONY : generator/bezier.i
 
 # target to preprocess a source file
-cone.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.i
-.PHONY : cone.cpp.i
+generator/bezier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/bezier.cpp.i
+.PHONY : generator/bezier.cpp.i
 
-cone.s: cone.cpp.s
-.PHONY : cone.s
+generator/bezier.s: generator/bezier.cpp.s
+.PHONY : generator/bezier.s
 
 # target to generate assembly for a file
-cone.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/cone.cpp.s
-.PHONY : cone.cpp.s
+generator/bezier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/bezier.cpp.s
+.PHONY : generator/bezier.cpp.s
 
-engine.o: engine.cpp.o
-.PHONY : engine.o
+generator/box.o: generator/box.cpp.o
+.PHONY : generator/box.o
 
 # target to build an object file
-engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.o
-.PHONY : engine.cpp.o
+generator/box.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/box.cpp.o
+.PHONY : generator/box.cpp.o
 
-engine.i: engine.cpp.i
-.PHONY : engine.i
+generator/box.i: generator/box.cpp.i
+.PHONY : generator/box.i
 
 # target to preprocess a source file
-engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.i
-.PHONY : engine.cpp.i
+generator/box.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/box.cpp.i
+.PHONY : generator/box.cpp.i
 
-engine.s: engine.cpp.s
-.PHONY : engine.s
+generator/box.s: generator/box.cpp.s
+.PHONY : generator/box.s
 
 # target to generate assembly for a file
-engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine.cpp.s
-.PHONY : engine.cpp.s
+generator/box.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/box.cpp.s
+.PHONY : generator/box.cpp.s
 
-generator.o: generator.cpp.o
-.PHONY : generator.o
+generator/cone.o: generator/cone.cpp.o
+.PHONY : generator/cone.o
 
 # target to build an object file
-generator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.o
-.PHONY : generator.cpp.o
+generator/cone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/cone.cpp.o
+.PHONY : generator/cone.cpp.o
 
-generator.i: generator.cpp.i
-.PHONY : generator.i
+generator/cone.i: generator/cone.cpp.i
+.PHONY : generator/cone.i
 
 # target to preprocess a source file
-generator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.i
-.PHONY : generator.cpp.i
+generator/cone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/cone.cpp.i
+.PHONY : generator/cone.cpp.i
 
-generator.s: generator.cpp.s
-.PHONY : generator.s
+generator/cone.s: generator/cone.cpp.s
+.PHONY : generator/cone.s
 
 # target to generate assembly for a file
-generator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator.cpp.s
-.PHONY : generator.cpp.s
+generator/cone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/cone.cpp.s
+.PHONY : generator/cone.cpp.s
 
-plane.o: plane.cpp.o
-.PHONY : plane.o
+generator/generator.o: generator/generator.cpp.o
+.PHONY : generator/generator.o
 
 # target to build an object file
-plane.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.o
-.PHONY : plane.cpp.o
+generator/generator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/generator.cpp.o
+.PHONY : generator/generator.cpp.o
 
-plane.i: plane.cpp.i
-.PHONY : plane.i
+generator/generator.i: generator/generator.cpp.i
+.PHONY : generator/generator.i
 
 # target to preprocess a source file
-plane.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.i
-.PHONY : plane.cpp.i
+generator/generator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/generator.cpp.i
+.PHONY : generator/generator.cpp.i
 
-plane.s: plane.cpp.s
-.PHONY : plane.s
+generator/generator.s: generator/generator.cpp.s
+.PHONY : generator/generator.s
 
 # target to generate assembly for a file
-plane.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/plane.cpp.s
-.PHONY : plane.cpp.s
+generator/generator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/generator.cpp.s
+.PHONY : generator/generator.cpp.s
 
-sphere.o: sphere.cpp.o
-.PHONY : sphere.o
+generator/plane.o: generator/plane.cpp.o
+.PHONY : generator/plane.o
 
 # target to build an object file
-sphere.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.o
-.PHONY : sphere.cpp.o
+generator/plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/plane.cpp.o
+.PHONY : generator/plane.cpp.o
 
-sphere.i: sphere.cpp.i
-.PHONY : sphere.i
+generator/plane.i: generator/plane.cpp.i
+.PHONY : generator/plane.i
 
 # target to preprocess a source file
-sphere.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.i
-.PHONY : sphere.cpp.i
+generator/plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/plane.cpp.i
+.PHONY : generator/plane.cpp.i
 
-sphere.s: sphere.cpp.s
-.PHONY : sphere.s
+generator/plane.s: generator/plane.cpp.s
+.PHONY : generator/plane.s
 
 # target to generate assembly for a file
-sphere.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/sphere.cpp.s
-.PHONY : sphere.cpp.s
+generator/plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/plane.cpp.s
+.PHONY : generator/plane.cpp.s
 
-tags.o: tags.cpp.o
-.PHONY : tags.o
+generator/sphere.o: generator/sphere.cpp.o
+.PHONY : generator/sphere.o
 
 # target to build an object file
-tags.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tags.cpp.o
-.PHONY : tags.cpp.o
+generator/sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/sphere.cpp.o
+.PHONY : generator/sphere.cpp.o
 
-tags.i: tags.cpp.i
-.PHONY : tags.i
+generator/sphere.i: generator/sphere.cpp.i
+.PHONY : generator/sphere.i
 
 # target to preprocess a source file
-tags.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tags.cpp.i
-.PHONY : tags.cpp.i
+generator/sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/sphere.cpp.i
+.PHONY : generator/sphere.cpp.i
 
-tags.s: tags.cpp.s
-.PHONY : tags.s
+generator/sphere.s: generator/sphere.cpp.s
+.PHONY : generator/sphere.s
 
 # target to generate assembly for a file
-tags.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tags.cpp.s
-.PHONY : tags.cpp.s
+generator/sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/sphere.cpp.s
+.PHONY : generator/sphere.cpp.s
 
-tinyxml2.o: tinyxml2.cpp.o
-.PHONY : tinyxml2.o
+generator/torus.o: generator/torus.cpp.o
+.PHONY : generator/torus.o
 
 # target to build an object file
-tinyxml2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.o
-.PHONY : tinyxml2.cpp.o
+generator/torus.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/torus.cpp.o
+.PHONY : generator/torus.cpp.o
 
-tinyxml2.i: tinyxml2.cpp.i
-.PHONY : tinyxml2.i
+generator/torus.i: generator/torus.cpp.i
+.PHONY : generator/torus.i
 
 # target to preprocess a source file
-tinyxml2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.i
-.PHONY : tinyxml2.cpp.i
+generator/torus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/torus.cpp.i
+.PHONY : generator/torus.cpp.i
 
-tinyxml2.s: tinyxml2.cpp.s
-.PHONY : tinyxml2.s
+generator/torus.s: generator/torus.cpp.s
+.PHONY : generator/torus.s
 
 # target to generate assembly for a file
-tinyxml2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/tinyxml2.cpp.s
-.PHONY : tinyxml2.cpp.s
+generator/torus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/generator/torus.cpp.s
+.PHONY : generator/torus.cpp.s
 
-torus.o: torus.cpp.o
-.PHONY : torus.o
+utils/tinyxml2.o: utils/tinyxml2.cpp.o
+.PHONY : utils/tinyxml2.o
 
 # target to build an object file
-torus.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/torus.cpp.o
-.PHONY : torus.cpp.o
+utils/tinyxml2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/utils/tinyxml2.cpp.o
+.PHONY : utils/tinyxml2.cpp.o
 
-torus.i: torus.cpp.i
-.PHONY : torus.i
+utils/tinyxml2.i: utils/tinyxml2.cpp.i
+.PHONY : utils/tinyxml2.i
 
 # target to preprocess a source file
-torus.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/torus.cpp.i
-.PHONY : torus.cpp.i
+utils/tinyxml2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/utils/tinyxml2.cpp.i
+.PHONY : utils/tinyxml2.cpp.i
 
-torus.s: torus.cpp.s
-.PHONY : torus.s
+utils/tinyxml2.s: utils/tinyxml2.cpp.s
+.PHONY : utils/tinyxml2.s
 
 # target to generate assembly for a file
-torus.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/torus.cpp.s
-.PHONY : torus.cpp.s
+utils/tinyxml2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/utils/tinyxml2.cpp.s
+.PHONY : utils/tinyxml2.cpp.s
 
 # Help Target
 help:
@@ -392,36 +392,36 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... engine"
 	@echo "... generator"
-	@echo "... bezier.o"
-	@echo "... bezier.i"
-	@echo "... bezier.s"
-	@echo "... box.o"
-	@echo "... box.i"
-	@echo "... box.s"
-	@echo "... cone.o"
-	@echo "... cone.i"
-	@echo "... cone.s"
-	@echo "... engine.o"
-	@echo "... engine.i"
-	@echo "... engine.s"
-	@echo "... generator.o"
-	@echo "... generator.i"
-	@echo "... generator.s"
-	@echo "... plane.o"
-	@echo "... plane.i"
-	@echo "... plane.s"
-	@echo "... sphere.o"
-	@echo "... sphere.i"
-	@echo "... sphere.s"
-	@echo "... tags.o"
-	@echo "... tags.i"
-	@echo "... tags.s"
-	@echo "... tinyxml2.o"
-	@echo "... tinyxml2.i"
-	@echo "... tinyxml2.s"
-	@echo "... torus.o"
-	@echo "... torus.i"
-	@echo "... torus.s"
+	@echo "... engine/engine.o"
+	@echo "... engine/engine.i"
+	@echo "... engine/engine.s"
+	@echo "... engine/tags.o"
+	@echo "... engine/tags.i"
+	@echo "... engine/tags.s"
+	@echo "... generator/bezier.o"
+	@echo "... generator/bezier.i"
+	@echo "... generator/bezier.s"
+	@echo "... generator/box.o"
+	@echo "... generator/box.i"
+	@echo "... generator/box.s"
+	@echo "... generator/cone.o"
+	@echo "... generator/cone.i"
+	@echo "... generator/cone.s"
+	@echo "... generator/generator.o"
+	@echo "... generator/generator.i"
+	@echo "... generator/generator.s"
+	@echo "... generator/plane.o"
+	@echo "... generator/plane.i"
+	@echo "... generator/plane.s"
+	@echo "... generator/sphere.o"
+	@echo "... generator/sphere.i"
+	@echo "... generator/sphere.s"
+	@echo "... generator/torus.o"
+	@echo "... generator/torus.i"
+	@echo "... generator/torus.s"
+	@echo "... utils/tinyxml2.o"
+	@echo "... utils/tinyxml2.i"
+	@echo "... utils/tinyxml2.s"
 .PHONY : help
 
 

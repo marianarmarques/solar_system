@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/engine.dir/engine.cpp.o"
-  "CMakeFiles/engine.dir/engine.cpp.o.d"
-  "CMakeFiles/engine.dir/tags.cpp.o"
-  "CMakeFiles/engine.dir/tags.cpp.o.d"
-  "CMakeFiles/engine.dir/tinyxml2.cpp.o"
-  "CMakeFiles/engine.dir/tinyxml2.cpp.o.d"
+  "CMakeFiles/engine.dir/engine/engine.cpp.o"
+  "CMakeFiles/engine.dir/engine/engine.cpp.o.d"
+  "CMakeFiles/engine.dir/engine/tags.cpp.o"
+  "CMakeFiles/engine.dir/engine/tags.cpp.o.d"
+  "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o"
+  "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o.d"
   "engine"
   "engine.pdb"
 )

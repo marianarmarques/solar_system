@@ -3,8 +3,8 @@
 
 #include <GL/glew.h>
 #include "GL/glut.h"
-#include "tinyxml2.hpp"
-#include "point.hpp"
+#include "../../utils/headers/tinyxml2.hpp"
+#include "../../utils/headers/point.hpp"
 #include <cmath>
 #include <vector>
 #include <fstream>

@@ -69,60 +69,60 @@ include CMakeFiles/engine.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/engine.dir/flags.make
 
-CMakeFiles/engine.dir/engine.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/engine.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine.cpp
-CMakeFiles/engine.dir/engine.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine.cpp.o -MF CMakeFiles/engine.dir/engine.cpp.o.d -o CMakeFiles/engine.dir/engine.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine.cpp
+CMakeFiles/engine.dir/engine/engine.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/engine.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp
+CMakeFiles/engine.dir/engine/engine.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/engine.dir/engine/engine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/engine.cpp.o -MF CMakeFiles/engine.dir/engine/engine.cpp.o.d -o CMakeFiles/engine.dir/engine/engine.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp
 
-CMakeFiles/engine.dir/engine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine.cpp > CMakeFiles/engine.dir/engine.cpp.i
+CMakeFiles/engine.dir/engine/engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/engine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp > CMakeFiles/engine.dir/engine/engine.cpp.i
 
-CMakeFiles/engine.dir/engine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine.cpp -o CMakeFiles/engine.dir/engine.cpp.s
+CMakeFiles/engine.dir/engine/engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/engine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp -o CMakeFiles/engine.dir/engine/engine.cpp.s
 
-CMakeFiles/engine.dir/tags.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/tags.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tags.cpp
-CMakeFiles/engine.dir/tags.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/tags.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/tags.cpp.o -MF CMakeFiles/engine.dir/tags.cpp.o.d -o CMakeFiles/engine.dir/tags.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tags.cpp
+CMakeFiles/engine.dir/engine/tags.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/engine/tags.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp
+CMakeFiles/engine.dir/engine/tags.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/engine.dir/engine/tags.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/engine/tags.cpp.o -MF CMakeFiles/engine.dir/engine/tags.cpp.o.d -o CMakeFiles/engine.dir/engine/tags.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp
 
-CMakeFiles/engine.dir/tags.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/tags.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tags.cpp > CMakeFiles/engine.dir/tags.cpp.i
+CMakeFiles/engine.dir/engine/tags.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/engine/tags.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp > CMakeFiles/engine.dir/engine/tags.cpp.i
 
-CMakeFiles/engine.dir/tags.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/tags.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tags.cpp -o CMakeFiles/engine.dir/tags.cpp.s
+CMakeFiles/engine.dir/engine/tags.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/engine/tags.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp -o CMakeFiles/engine.dir/engine/tags.cpp.s
 
-CMakeFiles/engine.dir/tinyxml2.cpp.o: CMakeFiles/engine.dir/flags.make
-CMakeFiles/engine.dir/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tinyxml2.cpp
-CMakeFiles/engine.dir/tinyxml2.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/tinyxml2.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/tinyxml2.cpp.o -MF CMakeFiles/engine.dir/tinyxml2.cpp.o.d -o CMakeFiles/engine.dir/tinyxml2.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tinyxml2.cpp
+CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp
+CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/engine.dir/utils/tinyxml2.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/engine.dir/utils/tinyxml2.cpp.o -MF CMakeFiles/engine.dir/utils/tinyxml2.cpp.o.d -o CMakeFiles/engine.dir/utils/tinyxml2.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp
 
-CMakeFiles/engine.dir/tinyxml2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/tinyxml2.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tinyxml2.cpp > CMakeFiles/engine.dir/tinyxml2.cpp.i
+CMakeFiles/engine.dir/utils/tinyxml2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/utils/tinyxml2.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp > CMakeFiles/engine.dir/utils/tinyxml2.cpp.i
 
-CMakeFiles/engine.dir/tinyxml2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/tinyxml2.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/tinyxml2.cpp -o CMakeFiles/engine.dir/tinyxml2.cpp.s
+CMakeFiles/engine.dir/utils/tinyxml2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/utils/tinyxml2.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp -o CMakeFiles/engine.dir/utils/tinyxml2.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
-"CMakeFiles/engine.dir/engine.cpp.o" \
-"CMakeFiles/engine.dir/tags.cpp.o" \
-"CMakeFiles/engine.dir/tinyxml2.cpp.o"
+"CMakeFiles/engine.dir/engine/engine.cpp.o" \
+"CMakeFiles/engine.dir/engine/tags.cpp.o" \
+"CMakeFiles/engine.dir/utils/tinyxml2.cpp.o"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
-engine: CMakeFiles/engine.dir/engine.cpp.o
-engine: CMakeFiles/engine.dir/tags.cpp.o
-engine: CMakeFiles/engine.dir/tinyxml2.cpp.o
+engine: CMakeFiles/engine.dir/engine/engine.cpp.o
+engine: CMakeFiles/engine.dir/engine/tags.cpp.o
+engine: CMakeFiles/engine.dir/utils/tinyxml2.cpp.o
 engine: CMakeFiles/engine.dir/build.make
 engine: /usr/lib/x86_64-linux-gnu/libGLEW.so
 engine: /usr/lib/x86_64-linux-gnu/libOpenGL.so

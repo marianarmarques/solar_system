@@ -1,7 +1,6 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
-#include <string>
 #include <sstream>
 
 using namespace std;

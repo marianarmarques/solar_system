@@ -1,16 +1,11 @@
 #ifndef BEZIER_HPP
 #define BEZIER_HPP
 
-using namespace std;
-
-#include "point.hpp"
-#include "primitive.hpp"
-#include "utils.hpp"
-#include <math.h>
+#include "../../generator/headers/primitive.hpp"
+#include "../../utils/headers/utils.hpp"
+#include <cmath>
 #include <fstream>
 #include <iostream>
-#include <string>
-#include <vector>
 #include <map>
 
 class Bezier : public Primitive {
