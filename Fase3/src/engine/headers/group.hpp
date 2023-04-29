@@ -1,10 +1,12 @@
-#ifndef TAGS_HPP
-#define TAGS_HPP 
+#ifndef GROUP_HPP
+#define GROUP_HPP
 
 #include <GL/glew.h>
 #include "GL/glut.h"
 #include "../../utils/headers/tinyxml2.hpp"
 #include "../../utils/headers/point.hpp"
+#include "window.hpp"
+#include "camera.hpp"
 #include <cmath>
 #include <vector>
 #include <fstream>
@@ -13,122 +15,78 @@
 
 using namespace std;
 
-class Window {
-    private:
-        int width, height;
-    
-    public:
-        int getWidth() const {return width;}
-        int getHeight() const {return height;}
-
-        void printWindow() {
-            cout << "Window width: " << getWidth() << endl;
-            cout << "Window height: " << getHeight() << endl;
-        }
-
-        Window() {
-            width = 0;
-            height = 0;
-        }
-
-        Window(int width, int height) {
-            this->width = width;
-            this->height = height;
-        }
-};
-
-class Camera {
-    private:
-        Point position, up, lookAt, projection; 
-
-    public:
-        Point getPosition() const {return position;}
-        Point getLookAt() const {return lookAt;}
-        Point getUp() const {return up;}
-        Point getProjection() const {return projection;} 
-        
-        void printCamera() {
-            cout << "Camera position: " << getPosition().getX() << " " << getPosition().getY() << " " << getPosition().getZ() << endl;
-            cout << "Camera lookAt: " << getLookAt().getX() << " " << getLookAt().getY() << " " << getLookAt().getZ() << endl;
-            cout << "Camera up: " << getUp().getX() << " " << getUp().getY() << " " << getUp().getZ() << endl;
-            cout << "Camera projection: " << getProjection().getX() << " " << getProjection().getY() << " " << getProjection().getZ() << endl;
-        }
-
-        Camera() {
-            position = Point();
-            up = Point();
-            lookAt = Point();
-            projection = Point();
-        }
-
-        Camera(Point position, Point up, Point lookAt, Point projection) {
-            this->position = position;
-            this->up = up;
-            this->lookAt = lookAt;
-            this->projection = projection;
-        }
-};
-
 class Transform {
-        float x;
-        float y;
-        float z;
+    public:
+        virtual void printTransform() = 0;
+        virtual void doAction() = 0;
+
+        Transform() {}
+};
+
+class Translation : public Transform {
+    private:
+        float time;
+        bool align;
+        vector<Point> points;
 
     public:
+        float getTime() const {return time;}
+        float getAlign() const {return align;}
+        vector<Point> getPoints() const {return points;}
+
+        void printTransform() {
+            cout << "Translation: " << getTime() << " " << getAlign() << endl;
+            for (int i = 0; i < points.size(); i++) {
+                cout << points[i].getX() << " " << points[i].getY() << " " << points[i].getZ() << endl;
+            }
+        }
+
+        void doAction() {
+            // something with catmull-rom
+        }
+
+        Translation(float time, bool align, vector<Point> points) : Transform() {
+            this->time = time;
+            this->align = align;
+            this->points = points;
+        }
+};
+
+class Rotation : public Transform {
+    private:
+        float time, x, y, z;
+
+    public:
+        float getTime() const {return time;}
         float getX() const {return x;}
         float getY() const {return y;}
         float getZ() const {return z;}
-
-        virtual void printTransform() = 0;
-
-        virtual void doAction() = 0;
-
-        Transform() {
-            x = 0;
-            y = 0;
-            z = 0;
+        
+        void printTransform() {
+            cout << "Rotation: " << getTime() << " " << getX() << " " << getY() << " " << getZ() << endl;
         }
 
-        Transform(float x, float y, float z) {
+        void doAction() {
+            // something 
+        }
+
+        Rotation(float time, float x, float y, float z) : Transform() {
+            this->time = time;
             this->x = x;
             this->y = y;
             this->z = z;
         }
 };
 
-class Translation : public Transform {
-    public:
-        void printTransform() {
-            cout << "Translation: " << getX() << " " << getY() << " " << getZ() << endl;
-        }
-
-        void doAction() {
-            glTranslatef(getX(), getY(), getZ());
-        }
-
-        Translation(float x, float y, float z) : Transform(x, y, z) {}
-};
-
-class Rotation : public Transform {
-    private:
-        float angle;
-
-    public:
-        float getAngle() const {return angle;}
-        
-        void printTransform() {
-            cout << "Rotation: " << getAngle() << " " << getX() << " " << getY() << " " << getZ() << endl;
-        }
-
-        void doAction() {
-            glRotatef(angle, getX(), getY(), getZ());
-        }
-
-        Rotation(float angle, float x, float y, float z) : Transform(x, y, z) {this->angle = angle;}
-};
-
 class Scale : public Transform {
+    private:
+        float x, y, z;
+    
     public:
+        float getX() const {return x;}
+        float getY() const {return y;}
+        float getZ() const {return z;}
+
         void printTransform() {
             cout << "Scale: " << getX() << " " << getY() << " " << getZ() << endl;
         }
@@ -136,7 +94,11 @@ class Scale : public Transform {
             glScalef(getX(), getY(), getZ());
         }
 
-        Scale(float x, float y, float z) : Transform(x, y, z) {}
+        Scale(float x, float y, float z) : Transform() {
+            this->x = x;
+            this->y = y;
+            this->z = z;
+        }
 };
 
 class Transforms {
@@ -294,7 +256,7 @@ class Group {
         }
 };
 
-class Tags {
+class Tree {
     private:
         Window window;
         Camera camera;
@@ -307,7 +269,7 @@ class Tags {
         Group getGroup() const {return groups;}
         map<string, pair<unsigned int,unsigned int>> getModelsVBOs() const {return modelsVBOs;}
 
-        void printTags() {
+        void printTree() {
             cout << "Window: " << endl;
             window.printWindow();
             cout << "Camera: " << endl;
@@ -320,14 +282,14 @@ class Tags {
             }
         }
 
-        Tags() {
+        Tree() {
             window = Window();
             camera = Camera();
             groups = Group();
             map<string, pair<unsigned int,unsigned int>> modelsVBOs = map<string, pair<unsigned int,unsigned int>>();
         }
 
-        Tags(Window window, Camera camera, Group groups, map<string, pair<unsigned int,unsigned int>> modelsVBOs) {
+        Tree(Window window, Camera camera, Group groups, map<string, pair<unsigned int,unsigned int>> modelsVBOs) {
             this->window = window;
             this->camera = camera;
             this->groups = groups;
@@ -335,6 +297,6 @@ class Tags {
         }
 };
 
-Tags readXML(const char * path);
+Tree readXML(const char * path);
 
 #endif

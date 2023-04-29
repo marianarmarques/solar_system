@@ -1,43 +1,6 @@
-#include "headers/tags.hpp"
+#include "headers/group.hpp"
 
 map<string, pair<unsigned int,unsigned int>> modelsVBOs = map<string, pair<unsigned int,unsigned int>>(); 
-
-Window readWindow(tinyxml2::XMLNode *world)
-{
-    if(!world->FirstChildElement("window")) {
-        return Window();
-    }
-
-    int width = world->FirstChildElement("window")->IntAttribute("width");
-    int height = world->FirstChildElement("window")->IntAttribute("height");
-
-    return Window(width, height);
-}
-
-Camera readCamera(tinyxml2::XMLNode *world)
-{
-    if(!world->FirstChildElement("camera")) {
-        return Camera();
-    }
-
-    Point position(stof(world->FirstChildElement("camera")->FirstChildElement("position")->Attribute("x")),
-                   stof(world->FirstChildElement("camera")->FirstChildElement("position")->Attribute("y")),
-                   stof(world->FirstChildElement("camera")->FirstChildElement("position")->Attribute("z")));
-
-    Point lookAt(stof(world->FirstChildElement("camera")->FirstChildElement("lookAt")->Attribute("x")),
-                 stof(world->FirstChildElement("camera")->FirstChildElement("lookAt")->Attribute("y")),
-                 stof(world->FirstChildElement("camera")->FirstChildElement("lookAt")->Attribute("z")));
-
-    Point up(stof(world->FirstChildElement("camera")->FirstChildElement("up")->Attribute("x")),
-             stof(world->FirstChildElement("camera")->FirstChildElement("up")->Attribute("y")),
-             stof(world->FirstChildElement("camera")->FirstChildElement("up")->Attribute("z")));
-
-    Point projection(stof(world->FirstChildElement("camera")->FirstChildElement("projection")->Attribute("fov")),
-                     stof(world->FirstChildElement("camera")->FirstChildElement("projection")->Attribute("near")),
-                     stof(world->FirstChildElement("camera")->FirstChildElement("projection")->Attribute("far")));
-
-    return Camera(position, up, lookAt, projection);
-}
 
 Transforms readTransforms(tinyxml2::XMLNode *group)
 {
@@ -55,26 +18,41 @@ Transforms readTransforms(tinyxml2::XMLNode *group)
     {
         if (!strcmp(transformation->Name(), "translate"))
         {
-            float x, y, z;
-            transformation->QueryFloatAttribute("x", &x);
-            transformation->QueryFloatAttribute("y", &y);
-            transformation->QueryFloatAttribute("z", &z);
+            float time;
+            bool align;
+            vector<Point> points = vector<Point>();
 
-            Translation *t = new Translation(x, y, z);
+            transformation->QueryFloatAttribute("time", &time);
+            transformation->QueryBoolAttribute("align", &align);
+
+            tinyxml2::XMLElement *point = transformation->FirstChildElement("point");
+            while(point)
+            {
+                float x, y, z;
+                point->QueryFloatAttribute("x", &x);
+                point->QueryFloatAttribute("y", &y);
+                point->QueryFloatAttribute("z", &z);
+
+                points.push_back(Point(x, y, z));
+                point = point->NextSiblingElement();
+            }
+
+            Translation *t = new Translation(time, align, points);
             transforms.addTransform(*t);
         }
 
         if (!strcmp(transformation->Name(), "rotate"))
         {
-            float angle, x, y, z;
-            transformation->QueryFloatAttribute("angle", &angle);
+            float time, x, y, z;
+            transformation->QueryFloatAttribute("time", &time);
             transformation->QueryFloatAttribute("x", &x);
             transformation->QueryFloatAttribute("y", &y);
             transformation->QueryFloatAttribute("z", &z);
 
-            Rotation *r = new Rotation(angle, x, y, z);
+            Rotation *r = new Rotation(time, x, y, z);
             transforms.addTransform(*r);
         }
+
         if (strcmp(transformation->Name(), "scale") == 0)
         {
             float x, y, z;
@@ -85,6 +63,7 @@ Transforms readTransforms(tinyxml2::XMLNode *group)
             Scale *s = new Scale(x, y, z);
             transforms.addTransform(*s);
         }
+
         transformation = transformation->NextSiblingElement();
     }
 
@@ -161,8 +140,8 @@ Models readModels(tinyxml2::XMLNode *group)
 
 Group readGroups(tinyxml2::XMLNode *group)
 {
-    Models m = readModels(group);
     Transforms t = readTransforms(group);
+    Models m = readModels(group);
     vector<Group> groups = vector<Group>();
     Color c = Color();
     
@@ -181,7 +160,7 @@ Group readGroups(tinyxml2::XMLNode *group)
     return Group(t, m, groups, c);
 }
 
-Tags readXML(const char *path)
+Tree readXML(const char *path)
 {
     tinyxml2::XMLDocument doc;
 
@@ -198,5 +177,5 @@ Tags readXML(const char *path)
     
     tinyxml2::XMLElement *group = world->FirstChildElement("group");
 
-    return Tags(readWindow(world), readCamera(world), readGroups(group), modelsVBOs);
+    return Tree(readWindow(world), readCamera(world), readGroups(group), modelsVBOs);
 }

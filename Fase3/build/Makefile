@@ -142,6 +142,30 @@ generator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generator.dir/build.make CMakeFiles/generator.dir/build
 .PHONY : generator/fast
 
+engine/camera.o: engine/camera.cpp.o
+.PHONY : engine/camera.o
+
+# target to build an object file
+engine/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/camera.cpp.o
+.PHONY : engine/camera.cpp.o
+
+engine/camera.i: engine/camera.cpp.i
+.PHONY : engine/camera.i
+
+# target to preprocess a source file
+engine/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/camera.cpp.i
+.PHONY : engine/camera.cpp.i
+
+engine/camera.s: engine/camera.cpp.s
+.PHONY : engine/camera.s
+
+# target to generate assembly for a file
+engine/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/camera.cpp.s
+.PHONY : engine/camera.cpp.s
+
 engine/engine.o: engine/engine.cpp.o
 .PHONY : engine/engine.o
 
@@ -166,29 +190,53 @@ engine/engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/engine.cpp.s
 .PHONY : engine/engine.cpp.s
 
-engine/tags.o: engine/tags.cpp.o
-.PHONY : engine/tags.o
+engine/group.o: engine/group.cpp.o
+.PHONY : engine/group.o
 
 # target to build an object file
-engine/tags.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.o
-.PHONY : engine/tags.cpp.o
+engine/group.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/group.cpp.o
+.PHONY : engine/group.cpp.o
 
-engine/tags.i: engine/tags.cpp.i
-.PHONY : engine/tags.i
+engine/group.i: engine/group.cpp.i
+.PHONY : engine/group.i
 
 # target to preprocess a source file
-engine/tags.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.i
-.PHONY : engine/tags.cpp.i
+engine/group.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/group.cpp.i
+.PHONY : engine/group.cpp.i
 
-engine/tags.s: engine/tags.cpp.s
-.PHONY : engine/tags.s
+engine/group.s: engine/group.cpp.s
+.PHONY : engine/group.s
 
 # target to generate assembly for a file
-engine/tags.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/tags.cpp.s
-.PHONY : engine/tags.cpp.s
+engine/group.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/group.cpp.s
+.PHONY : engine/group.cpp.s
+
+engine/window.o: engine/window.cpp.o
+.PHONY : engine/window.o
+
+# target to build an object file
+engine/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/window.cpp.o
+.PHONY : engine/window.cpp.o
+
+engine/window.i: engine/window.cpp.i
+.PHONY : engine/window.i
+
+# target to preprocess a source file
+engine/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/window.cpp.i
+.PHONY : engine/window.cpp.i
+
+engine/window.s: engine/window.cpp.s
+.PHONY : engine/window.s
+
+# target to generate assembly for a file
+engine/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/window.cpp.s
+.PHONY : engine/window.cpp.s
 
 generator/bezier.o: generator/bezier.cpp.o
 .PHONY : generator/bezier.o
@@ -392,12 +440,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... engine"
 	@echo "... generator"
+	@echo "... engine/camera.o"
+	@echo "... engine/camera.i"
+	@echo "... engine/camera.s"
 	@echo "... engine/engine.o"
 	@echo "... engine/engine.i"
 	@echo "... engine/engine.s"
-	@echo "... engine/tags.o"
-	@echo "... engine/tags.i"
-	@echo "... engine/tags.s"
+	@echo "... engine/group.o"
+	@echo "... engine/group.i"
+	@echo "... engine/group.s"
+	@echo "... engine/window.o"
+	@echo "... engine/window.i"
+	@echo "... engine/window.s"
 	@echo "... generator/bezier.o"
 	@echo "... generator/bezier.i"
 	@echo "... generator/bezier.s"

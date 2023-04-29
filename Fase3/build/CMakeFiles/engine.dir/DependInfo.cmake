@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/camera.cpp" "CMakeFiles/engine.dir/engine/camera.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/camera.cpp.o.d"
   "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp" "CMakeFiles/engine.dir/engine/engine.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/engine.cpp.o.d"
-  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/tags.cpp" "CMakeFiles/engine.dir/engine/tags.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/tags.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/group.cpp" "CMakeFiles/engine.dir/engine/group.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/group.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/window.cpp" "CMakeFiles/engine.dir/engine/window.cpp.o" "gcc" "CMakeFiles/engine.dir/engine/window.cpp.o.d"
   "/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp" "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o" "gcc" "CMakeFiles/engine.dir/utils/tinyxml2.cpp.o.d"
   )
 

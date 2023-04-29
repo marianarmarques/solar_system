@@ -6,7 +6,7 @@ PROJECT(project_cg)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-add_executable(engine ./engine/engine.cpp ./utils/headers/point.hpp ./engine/tags.cpp ./utils/tinyxml2.cpp)
+add_executable(engine ./engine/engine.cpp ./utils/headers/point.hpp ./engine/window.cpp ./engine/camera.cpp ./engine/group.cpp ./utils/tinyxml2.cpp)
 add_executable(generator ./generator/generator.cpp ./utils/headers/point.hpp ./generator/headers/primitive.hpp ./generator/plane.cpp ./generator/box.cpp ./generator/sphere.cpp ./generator/cone.cpp ./generator/torus.cpp ./generator/bezier.cpp)
 
 find_package(OpenGL REQUIRED)

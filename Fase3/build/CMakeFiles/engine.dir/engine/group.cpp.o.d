@@ -1,5 +1,5 @@
-CMakeFiles/engine.dir/engine/engine.cpp.o: \
- /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp \
+CMakeFiles/engine.dir/engine/group.cpp.o: \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/group.cpp \
  /usr/include/stdc-predef.h \
  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/group.hpp \
  /usr/include/GL/glew.h /usr/include/c++/12/cstddef \

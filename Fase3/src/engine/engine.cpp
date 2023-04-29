@@ -1,10 +1,10 @@
-#include "headers/tags.hpp"
+#include "headers/group.hpp"
 
 static int drawMode = 0, eixos = 0;
 static float alpha, betha, radius;
 Point position, lookAt, up, projection;
 
-Tags tagsXML = Tags();
+Tree tagsXML = Tree();
 
 
 void drawGroup(Group group){
@@ -214,6 +214,7 @@ void processSpecialKeys(int key, int xx, int yy) {
 int main(int argc, char **argv) {
 
     if (argc != 2) {
+        printf("Not enough arguments\n");
         return 0;
     }
 
