@@ -211,9 +211,8 @@ Models readModels(tinyxml2::XMLNode *group)
 
         unsigned int mapSize = modelsVBOs.size();
         modelsVBOs.insert(pair<string, pair<unsigned int, unsigned int>>(file, pair<unsigned int, unsigned int>(mapSize, vectorPoints->size())));
-
         auto modelVBOs = modelsVBOs.find(file);
-        
+
         glGenBuffers(1, &modelVBOs->second.first);
 
         glBindBuffer(GL_ARRAY_BUFFER, modelVBOs->second.first);

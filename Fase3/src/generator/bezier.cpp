@@ -109,7 +109,7 @@ vector<Point> Bezier::point_generator() {
             for(int tu = 0; tu < tessellation; tu++) {
                 float u = (float) tu/tessellation;
 
-                 // triângulo superior
+                // triângulo superior
                 points.push_back(getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation))));
                 points.push_back(getBezierPoint(it->first, u, (v + (1.0f/tessellation))));
                 points.push_back(getBezierPoint(it->first, u, v));

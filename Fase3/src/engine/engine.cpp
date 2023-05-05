@@ -147,7 +147,7 @@ void renderScene()
     drawGroup(tagsXML.getGroup());
 
     elapsed = chekkFPS();
-    printf("FPS: %f\n", elapsed);
+    //printf("FPS: %f\n", elapsed);
 
     // end of frame
     glutSwapBuffers();

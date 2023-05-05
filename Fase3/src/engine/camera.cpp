@@ -1,5 +1,7 @@
 #include "headers/camera.hpp"
 
+static float alpha, betha, radius;
+
 Camera readCamera(tinyxml2::XMLNode *world)
 {
     if(!world->FirstChildElement("camera")) {
