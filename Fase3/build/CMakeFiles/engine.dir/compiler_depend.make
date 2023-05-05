@@ -410,9 +410,7 @@ CMakeFiles/engine.dir/engine/engine.cpp.o: /home/m_rmarques/University/3ano/CG/P
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
-  /usr/include/c++/12/iostream \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/headers/utils.hpp \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -438,6 +436,9 @@ CMakeFiles/engine.dir/engine/engine.cpp.o: /home/m_rmarques/University/3ano/CG/P
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
   /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
+  /usr/include/c++/12/iostream \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
   /usr/include/c++/12/vector \
   /usr/include/c++/12/bits/stl_uninitialized.h \
   /usr/include/c++/12/bits/stl_vector.h \
@@ -665,9 +666,7 @@ CMakeFiles/engine.dir/engine/group.cpp.o: /home/m_rmarques/University/3ano/CG/Pr
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
-  /usr/include/c++/12/iostream \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/headers/utils.hpp \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -693,6 +692,9 @@ CMakeFiles/engine.dir/engine/group.cpp.o: /home/m_rmarques/University/3ano/CG/Pr
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
   /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
+  /usr/include/c++/12/iostream \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
   /usr/include/c++/12/vector \
   /usr/include/c++/12/bits/stl_uninitialized.h \
   /usr/include/c++/12/bits/stl_vector.h \
@@ -1004,6 +1006,8 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 
 
 /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/tinyxml2.cpp:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/window.cpp:
 
 /usr/include/c++/12/bits/functexcept.h:
 
@@ -1373,8 +1377,6 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/window.cpp:
-
 /usr/include/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
@@ -1461,6 +1463,8 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 
 /usr/include/GL/glut.h:
 
+/usr/include/c++/12/tr1/gamma.tcc:
+
 /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h:
@@ -1480,8 +1484,6 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 /usr/include/c++/12/bits/specfun.h:
 
 /usr/include/c++/12/limits:
-
-/usr/include/c++/12/tr1/gamma.tcc:
 
 /usr/include/c++/12/cwchar:
 
@@ -1506,6 +1508,8 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 /usr/include/c++/12/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/12/bits/stl_vector.h:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/utils/headers/utils.hpp:
 
 /usr/include/c++/12/bits/stl_bvector.h:
 

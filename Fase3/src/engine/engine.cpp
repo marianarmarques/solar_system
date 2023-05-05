@@ -4,16 +4,23 @@ static int drawMode = 0, eixos = 0;
 static float alpha, betha, radius;
 Point position, lookAt, up, projection;
 
+double timebase, elapsed = 0;
+
 Tree tagsXML = Tree();
 
+double chekkFPS(){
+    double time = glutGet(GLUT_ELAPSED_TIME);
+    double elapsed = (time - timebase)/1000;
+    return  elapsed;
+}
 
 void drawGroup(Group group){
     glPushMatrix();
     glColor3f(group.getColor().getR(), group.getColor().getG(), group.getColor().getB());
 
     // Transformations
-    for(int i = 0; i < group.getTransforms().getTransforms().size(); i++) {
-        group.getTransforms().getTransforms().at(i)->doAction();
+    for(int i = 0; i < group.getTransforms().getTransforms().size(); i++) {        
+        group.getTransforms().getTransforms().at(i)->doAction(elapsed);
     }
 
     //Models
@@ -139,8 +146,12 @@ void renderScene()
 
     drawGroup(tagsXML.getGroup());
 
+    elapsed = chekkFPS();
+    printf("FPS: %f\n", elapsed);
+
     // end of frame
     glutSwapBuffers();
+    glutPostRedisplay();
 }
 
 
@@ -251,6 +262,8 @@ int main(int argc, char **argv) {
     projection = tagsXML.getCamera().getProjection();
     
     convertToSpherical();
+
+    timebase = glutGet(GLUT_ELAPSED_TIME);
 
     // enter GLUT's main cycle
     glutMainLoop();

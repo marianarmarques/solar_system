@@ -5,6 +5,7 @@
 #include "GL/glut.h"
 #include "../../utils/headers/tinyxml2.hpp"
 #include "../../utils/headers/point.hpp"
+#include "../../utils/headers/utils.hpp"
 #include "window.hpp"
 #include "camera.hpp"
 #include <cmath>
@@ -16,11 +17,28 @@
 using namespace std;
 
 class Transform {
-    public:
-        virtual void printTransform() = 0;
-        virtual void doAction() = 0;
+    private:
+        float x, y, z;
 
-        Transform() {}
+    public:
+        float getX() const {return x;}
+        float getY() const {return y;}
+        float getZ() const {return z;}
+
+        virtual void printTransform() = 0;
+        virtual void doAction(float t) = 0;
+
+        Transform() {
+            this->x = 0;
+            this->y = 0;
+            this->z = 0;
+        }
+
+        Transform(float x, float y, float z) {
+            this->x = x;
+            this->y = y;
+            this->z = z;
+        }
 };
 
 class Translation : public Transform {
@@ -34,15 +52,45 @@ class Translation : public Transform {
         float getAlign() const {return align;}
         vector<Point> getPoints() const {return points;}
 
+        void getCatmullRomPoint(float t, Point p1, Point p2, Point p3, Point p4, Point *pos, Point *deriv);
+        void getGlobalCatmullRomPoint(float gt, Point *pos, Point *deriv);
+        void renderCatmullRoomCurve();
+        void alignModel(Point *deriv);
+
         void printTransform() {
-            cout << "Translation: " << getTime() << " " << getAlign() << endl;
+            cout << "Translation: " << time << " " << align << endl;
             for (int i = 0; i < points.size(); i++) {
                 cout << points[i].getX() << " " << points[i].getY() << " " << points[i].getZ() << endl;
             }
         }
 
-        void doAction() {
-            // something with catmull-rom
+        void doAction(float t) {
+            if(points.empty()) {
+                glTranslatef(getX(), getY(), getZ());
+                return;
+            }
+            
+            renderCatmullRoomCurve();
+            int start = t/time;
+            t-= start * time;
+            Point pos = Point(), deriv = Point();
+            getGlobalCatmullRomPoint(t/time, &pos, &deriv);
+            glTranslatef(pos.getX(), pos.getY(), pos.getZ());
+
+            if(align) alignModel(&deriv);
+        }
+
+        Translation() : Transform() {
+            this->time = -1;
+            this->align = false;
+            this->points = vector<Point>();
+
+        }
+
+        Translation(float x, float y, float z) : Transform(x, y, z) {
+            this->time = -1;
+            this->align = false;
+            this->points = vector<Point>();
         }
 
         Translation(float time, bool align, vector<Point> points) : Transform() {
@@ -54,51 +102,52 @@ class Translation : public Transform {
 
 class Rotation : public Transform {
     private:
-        float time, x, y, z;
+        float angle, time;
 
     public:
+        float getAngle() const {return angle;}
         float getTime() const {return time;}
-        float getX() const {return x;}
-        float getY() const {return y;}
-        float getZ() const {return z;}
         
         void printTransform() {
-            cout << "Rotation: " << getTime() << " " << getX() << " " << getY() << " " << getZ() << endl;
+            cout << "Rotation: " << angle << " " << time << " " << getX() << " " << getY() << " " << getZ() << endl;
+        } 
+
+        void doAction(float t) {
+            float newAngle = 0;
+
+            if(time != -1) {
+                int start = t/time;
+                t-= start * time;
+                newAngle = 360 * (t / time);
+            }
+
+
+            glRotatef(angle + newAngle, getX(), getY(), getZ());
         }
 
-        void doAction() {
-            // something 
+        Rotation() : Transform() {
+            this->angle = 0;
+            this->time = -1;
         }
 
-        Rotation(float time, float x, float y, float z) : Transform() {
+        Rotation(float angle, float time, float x, float y, float z) : Transform(x, y, z) {
+            this->angle = angle;
             this->time = time;
-            this->x = x;
-            this->y = y;
-            this->z = z;
         }
 };
 
 class Scale : public Transform {
-    private:
-        float x, y, z;
-    
     public:
-        float getX() const {return x;}
-        float getY() const {return y;}
-        float getZ() const {return z;}
 
         void printTransform() {
             cout << "Scale: " << getX() << " " << getY() << " " << getZ() << endl;
         }
-        void doAction() {
+
+        void doAction(float t) {
             glScalef(getX(), getY(), getZ());
         }
 
-        Scale(float x, float y, float z) : Transform() {
-            this->x = x;
-            this->y = y;
-            this->z = z;
-        }
+        Scale(float x, float y, float z) : Transform(x, y, z) {}
 };
 
 class Transforms {

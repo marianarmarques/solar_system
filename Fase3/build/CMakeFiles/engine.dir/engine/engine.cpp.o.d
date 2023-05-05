@@ -168,9 +168,7 @@ CMakeFiles/engine.dir/engine/engine.cpp.o: \
  /usr/include/c++/12/bits/ostream.tcc \
  /usr/include/c++/12/bits/istream.tcc \
  /usr/include/c++/12/bits/sstream.tcc \
- /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
- /usr/include/c++/12/iostream \
- /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/../../utils/headers/utils.hpp \
  /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -193,8 +191,11 @@ CMakeFiles/engine.dir/engine/engine.cpp.o: \
  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
  /usr/include/c++/12/tr1/poly_hermite.tcc \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
- /usr/include/c++/12/tr1/riemann_zeta.tcc /usr/include/c++/12/vector \
- /usr/include/c++/12/bits/stl_uninitialized.h \
+ /usr/include/c++/12/tr1/riemann_zeta.tcc \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/window.hpp \
+ /usr/include/c++/12/iostream \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/headers/camera.hpp \
+ /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc /usr/include/c++/12/fstream \
