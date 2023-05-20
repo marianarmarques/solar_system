@@ -1,0 +1,67 @@
+[
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/engine/engine.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/engine.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/engine.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/engine/window.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/window.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/window.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/engine/camera.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/camera.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/camera.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/engine/light.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/light.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/light.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/engine/group.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/group.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/engine/group.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/engine.dir/utils/tinyxml2.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/tinyxml2.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/tinyxml2.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/generator.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/generator.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/generator.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/plane.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/plane.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/plane.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/box.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/box.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/box.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/sphere.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/sphere.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/sphere.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/cone.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/cone.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/cone.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/torus.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/torus.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/torus.cpp"
+},
+{
+  "directory": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/generator.dir/generator/bezier.cpp.o -c /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/bezier.cpp",
+  "file": "/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/bezier.cpp"
+}
+]
