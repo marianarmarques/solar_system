@@ -188,12 +188,6 @@ CMakeFiles/generator.dir/generator/bezier.cpp.o: /home/m_rmarques/University/3an
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /usr/include/c++/12/vector \
-  /usr/include/c++/12/bits/stl_uninitialized.h \
-  /usr/include/c++/12/bits/stl_vector.h \
-  /usr/include/c++/12/bits/stl_bvector.h \
-  /usr/include/c++/12/bits/vector.tcc \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -219,12 +213,12 @@ CMakeFiles/generator.dir/generator/bezier.cpp.o: /home/m_rmarques/University/3an
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
   /usr/include/c++/12/tr1/riemann_zeta.tcc \
-  /usr/include/c++/12/fstream \
-  /usr/include/c++/12/bits/codecvt.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
-  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
-  /usr/include/c++/12/bits/fstream.tcc \
-  /usr/include/c++/12/iostream \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
   /usr/include/c++/12/map \
   /usr/include/c++/12/bits/stl_tree.h \
   /usr/include/c++/12/ext/aligned_buffer.h \
@@ -233,7 +227,22 @@ CMakeFiles/generator.dir/generator/bezier.cpp.o: /home/m_rmarques/University/3an
   /usr/include/c++/12/tuple \
   /usr/include/c++/12/bits/uses_allocator.h \
   /usr/include/c++/12/bits/stl_multimap.h \
-  /usr/include/c++/12/bits/erase_if.h
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
+  /usr/include/c++/12/fstream \
+  /usr/include/c++/12/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
+  /usr/include/c++/12/bits/fstream.tcc \
+  /usr/include/c++/12/iostream
 
 CMakeFiles/generator.dir/generator/box.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/box.cpp \
   /usr/include/stdc-predef.h \
@@ -658,11 +667,6 @@ CMakeFiles/generator.dir/generator/cone.cpp.o: /home/m_rmarques/University/3ano/
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /usr/include/c++/12/vector \
-  /usr/include/c++/12/bits/stl_uninitialized.h \
-  /usr/include/c++/12/bits/stl_vector.h \
-  /usr/include/c++/12/bits/stl_bvector.h \
-  /usr/include/c++/12/bits/vector.tcc \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -687,7 +691,30 @@ CMakeFiles/generator.dir/generator/cone.cpp.o: /home/m_rmarques/University/3ano/
   /usr/include/c++/12/tr1/modified_bessel_func.tcc \
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
-  /usr/include/c++/12/tr1/riemann_zeta.tcc
+  /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/map \
+  /usr/include/c++/12/bits/stl_tree.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/stl_map.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/stl_multimap.h \
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h
 
 CMakeFiles/generator.dir/generator/generator.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/generator.cpp \
   /usr/include/stdc-predef.h \
@@ -1119,7 +1146,6 @@ CMakeFiles/generator.dir/generator/plane.cpp.o: /home/m_rmarques/University/3ano
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/vector.hpp \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1151,7 +1177,23 @@ CMakeFiles/generator.dir/generator/plane.cpp.o: /home/m_rmarques/University/3ano
   /usr/include/c++/12/bits/stl_vector.h \
   /usr/include/c++/12/bits/stl_bvector.h \
   /usr/include/c++/12/bits/vector.tcc \
-  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp
+  /usr/include/c++/12/map \
+  /usr/include/c++/12/bits/stl_tree.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/stl_map.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/stl_multimap.h \
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h
 
 CMakeFiles/generator.dir/generator/sphere.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/sphere.cpp \
   /usr/include/stdc-predef.h \
@@ -1340,11 +1382,6 @@ CMakeFiles/generator.dir/generator/sphere.cpp.o: /home/m_rmarques/University/3an
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /usr/include/c++/12/vector \
-  /usr/include/c++/12/bits/stl_uninitialized.h \
-  /usr/include/c++/12/bits/stl_vector.h \
-  /usr/include/c++/12/bits/stl_bvector.h \
-  /usr/include/c++/12/bits/vector.tcc \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1369,7 +1406,30 @@ CMakeFiles/generator.dir/generator/sphere.cpp.o: /home/m_rmarques/University/3an
   /usr/include/c++/12/tr1/modified_bessel_func.tcc \
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
-  /usr/include/c++/12/tr1/riemann_zeta.tcc
+  /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/map \
+  /usr/include/c++/12/bits/stl_tree.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/stl_map.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/stl_multimap.h \
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h
 
 CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/torus.cpp \
   /usr/include/stdc-predef.h \
@@ -1558,11 +1618,6 @@ CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano
   /usr/include/c++/12/bits/ostream.tcc \
   /usr/include/c++/12/bits/istream.tcc \
   /usr/include/c++/12/bits/sstream.tcc \
-  /usr/include/c++/12/vector \
-  /usr/include/c++/12/bits/stl_uninitialized.h \
-  /usr/include/c++/12/bits/stl_vector.h \
-  /usr/include/c++/12/bits/stl_bvector.h \
-  /usr/include/c++/12/bits/vector.tcc \
   /usr/include/c++/12/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -1587,32 +1642,35 @@ CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano
   /usr/include/c++/12/tr1/modified_bessel_func.tcc \
   /usr/include/c++/12/tr1/poly_hermite.tcc \
   /usr/include/c++/12/tr1/poly_laguerre.tcc \
-  /usr/include/c++/12/tr1/riemann_zeta.tcc
+  /usr/include/c++/12/tr1/riemann_zeta.tcc \
+  /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp \
+  /usr/include/c++/12/vector \
+  /usr/include/c++/12/bits/stl_uninitialized.h \
+  /usr/include/c++/12/bits/stl_vector.h \
+  /usr/include/c++/12/bits/stl_bvector.h \
+  /usr/include/c++/12/bits/vector.tcc \
+  /usr/include/c++/12/map \
+  /usr/include/c++/12/bits/stl_tree.h \
+  /usr/include/c++/12/ext/aligned_buffer.h \
+  /usr/include/c++/12/bits/node_handle.h \
+  /usr/include/c++/12/bits/stl_map.h \
+  /usr/include/c++/12/tuple \
+  /usr/include/c++/12/bits/uses_allocator.h \
+  /usr/include/c++/12/bits/stl_multimap.h \
+  /usr/include/c++/12/bits/erase_if.h \
+  /usr/include/c++/12/algorithm \
+  /usr/include/c++/12/bits/stl_algo.h \
+  /usr/include/c++/12/bits/algorithmfwd.h \
+  /usr/include/c++/12/bits/stl_heap.h \
+  /usr/include/c++/12/bits/stl_tempbuf.h \
+  /usr/include/c++/12/bits/uniform_int_dist.h \
+  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
+  /usr/include/c++/12/pstl/execution_defs.h
 
 
 /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/headers/torus.hpp:
 
 /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/headers/cone.hpp:
-
-/usr/include/c++/12/pstl/glue_algorithm_defs.h:
-
-/usr/include/c++/12/bits/stl_tempbuf.h:
-
-/usr/include/c++/12/bits/stl_heap.h:
-
-/usr/include/c++/12/bits/stl_algo.h:
-
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/cone.cpp:
-
-/usr/include/c++/12/bits/algorithmfwd.h:
-
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/box.cpp:
-
-/usr/include/c++/12/bits/erase_if.h:
-
-/usr/include/c++/12/bits/stl_multimap.h:
-
-/usr/include/c++/12/ext/aligned_buffer.h:
 
 /usr/include/c++/12/bits/fstream.tcc:
 
@@ -1621,6 +1679,34 @@ CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano
 /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h:
 
 /usr/include/c++/12/bits/codecvt.h:
+
+/usr/include/c++/12/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/12/bits/stl_tempbuf.h:
+
+/usr/include/c++/12/bits/stl_heap.h:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/cone.cpp:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/box.cpp:
+
+/usr/include/c++/12/bits/algorithmfwd.h:
+
+/usr/include/c++/12/bits/stl_algo.h:
+
+/usr/include/c++/12/bits/erase_if.h:
+
+/usr/include/c++/12/bits/stl_multimap.h:
+
+/usr/include/c++/12/ext/aligned_buffer.h:
+
+/usr/include/c++/12/bits/stl_bvector.h:
+
+/usr/include/c++/12/bits/stl_vector.h:
+
+/usr/include/c++/12/bits/stl_uninitialized.h:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp:
 
 /usr/include/c++/12/tr1/riemann_zeta.tcc:
 
@@ -1651,14 +1737,6 @@ CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/utils.hpp:
-
-/usr/include/c++/12/bits/stl_bvector.h:
-
-/usr/include/c++/12/bits/stl_vector.h:
-
-/usr/include/c++/12/bits/stl_uninitialized.h:
 
 /usr/include/c++/12/tr1/special_function_util.h:
 
@@ -1747,8 +1825,6 @@ CMakeFiles/generator.dir/generator/torus.cpp.o: /home/m_rmarques/University/3ano
 /usr/include/c++/12/ext/alloc_traits.h:
 
 /usr/include/c++/12/initializer_list:
-
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/utils/headers/vector.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 

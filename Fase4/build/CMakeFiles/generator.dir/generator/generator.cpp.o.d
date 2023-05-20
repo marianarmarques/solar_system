@@ -194,9 +194,14 @@ CMakeFiles/generator.dir/generator/generator.cpp.o: \
  /usr/include/c++/12/bits/uniform_int_dist.h \
  /usr/include/c++/12/pstl/glue_algorithm_defs.h \
  /usr/include/c++/12/pstl/execution_defs.h \
- /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/primitive.hpp \
- /usr/include/c++/12/iostream /usr/include/c++/12/fstream \
- /usr/include/c++/12/bits/codecvt.h \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/plane.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/sphere.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/cone.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/torus.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/bezier.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/../../utils/headers/utils.hpp \
+ /usr/include/c++/12/fstream /usr/include/c++/12/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++io.h \
- /usr/include/c++/12/bits/fstream.tcc
+ /usr/include/c++/12/bits/fstream.tcc /usr/include/c++/12/iostream \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase4/src/generator/./headers/primitive.hpp
