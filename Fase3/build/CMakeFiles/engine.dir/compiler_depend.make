@@ -201,7 +201,32 @@ CMakeFiles/engine.dir/engine/camera.cpp.o: /home/m_rmarques/University/3ano/CG/P
   /usr/include/c++/12/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/c++/12/iostream
+  /usr/include/c++/12/iostream \
+  /usr/include/c++/12/cmath \
+  /usr/include/math.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+  /usr/include/c++/12/bits/specfun.h \
+  /usr/include/c++/12/limits \
+  /usr/include/c++/12/tr1/gamma.tcc \
+  /usr/include/c++/12/tr1/special_function_util.h \
+  /usr/include/c++/12/tr1/bessel_function.tcc \
+  /usr/include/c++/12/tr1/beta_function.tcc \
+  /usr/include/c++/12/tr1/ell_integral.tcc \
+  /usr/include/c++/12/tr1/exp_integral.tcc \
+  /usr/include/c++/12/tr1/hypergeometric.tcc \
+  /usr/include/c++/12/tr1/legendre_function.tcc \
+  /usr/include/c++/12/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/12/tr1/poly_hermite.tcc \
+  /usr/include/c++/12/tr1/poly_laguerre.tcc \
+  /usr/include/c++/12/tr1/riemann_zeta.tcc
 
 CMakeFiles/engine.dir/engine/engine.cpp.o: /home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp \
   /usr/include/stdc-predef.h \
@@ -1273,9 +1298,9 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/GL/glu.h:
-
 /usr/include/c++/12/tr1/poly_hermite.tcc:
+
+/usr/include/GL/glu.h:
 
 /usr/include/c++/12/bits/locale_classes.h:
 
@@ -1451,20 +1476,6 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 
 /usr/include/c++/12/bits/stl_uninitialized.h:
 
-/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp:
-
-/usr/include/c++/12/bits/cpp_type_traits.h:
-
-/usr/include/c++/12/bits/codecvt.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/GL/gl.h:
-
-/usr/include/GL/glut.h:
-
-/usr/include/c++/12/tr1/gamma.tcc:
-
 /usr/include/x86_64-linux-gnu/c++/12/bits/cpu_defines.h:
 
 /usr/include/x86_64-linux-gnu/c++/12/bits/error_constants.h:
@@ -1484,6 +1495,8 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 /usr/include/c++/12/bits/specfun.h:
 
 /usr/include/c++/12/limits:
+
+/usr/include/c++/12/tr1/gamma.tcc:
 
 /usr/include/c++/12/cwchar:
 
@@ -1506,6 +1519,18 @@ CMakeFiles/engine.dir/utils/tinyxml2.cpp.o: /home/m_rmarques/University/3ano/CG/
 /usr/include/c++/12/bits/basic_ios.tcc:
 
 /usr/include/c++/12/tr1/riemann_zeta.tcc:
+
+/home/m_rmarques/University/3ano/CG/Project_CG/Fase3/src/engine/engine.cpp:
+
+/usr/include/c++/12/bits/cpp_type_traits.h:
+
+/usr/include/c++/12/bits/codecvt.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/GL/gl.h:
+
+/usr/include/GL/glut.h:
 
 /usr/include/c++/12/bits/stl_vector.h:
 

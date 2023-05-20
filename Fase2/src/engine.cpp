@@ -89,6 +89,23 @@ void draw_axis(void)
     glEnd();
 }
 
+void updateDrawMode() {
+    switch (drawMode)
+    {
+        case 0:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+            break;
+        case 1:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            break;
+        case 2:
+            glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+            break;
+        default:
+            break;
+    }
+}
+
 void changeSize(int w, int h) {
 
     // Prevent a divide by zero, when window is too short
@@ -135,21 +152,7 @@ void renderScene()
     if (eixos)
         draw_axis();
     
-    switch (drawMode)
-    {
-        case 0:
-            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-            break;
-        case 1:
-            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-            break;
-        case 2:
-            glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
-            break;
-        
-        default:
-            break;
-    }
+    updateDrawMode();
 
     drawGroup(tagsXML.getGroup());
 
@@ -175,11 +178,11 @@ void processKeys(unsigned char c, int xx, int yy) {
         break;
     
     case '+':
-        radius += 2;
+        radius -= 2;
         break;
     
     case '-':
-        radius -= 2;
+        radius += 2;
         break;
     
     case '.':

@@ -1,7 +1,7 @@
 CMakeFiles/engine.dir/tags.cpp.o: \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/tags.cpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/tags.cpp \
  /usr/include/stdc-predef.h \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/headers/tags.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/tags.hpp \
  /usr/include/GL/glut.h /usr/include/GL/freeglut_std.h \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
@@ -55,7 +55,7 @@ CMakeFiles/engine.dir/tags.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/12/bits/std_abs.h \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/headers/tinyxml2.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/tinyxml2.hpp \
  /usr/include/c++/12/cctype /usr/include/ctype.h \
  /usr/include/c++/12/climits \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h \
@@ -77,7 +77,7 @@ CMakeFiles/engine.dir/tags.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/c++/12/cstring /usr/include/string.h /usr/include/strings.h \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/headers/point.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/point.hpp \
  /usr/include/c++/12/string /usr/include/c++/12/bits/stringfwd.h \
  /usr/include/c++/12/bits/memoryfwd.h \
  /usr/include/c++/12/bits/char_traits.h \

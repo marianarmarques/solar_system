@@ -6,7 +6,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build/CMakeFiles/3.24.2/CMakeSystem.cmake"
+			"path" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build/CMakeFiles/3.24.2/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -15,11 +15,11 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
+			"path" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build/CMakeFiles/3.24.2/CMakeCCompiler.cmake"
 		},
 		{
 			"isGenerated" : true,
-			"path" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
+			"path" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -175,7 +175,7 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build",
+		"build" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build",
 		"source" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src"
 	},
 	"version" : 

@@ -1,8 +1,8 @@
 CMakeFiles/generator.dir/generator.cpp.o: \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/generator.cpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/generator.cpp \
  /usr/include/stdc-predef.h \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/box.hpp \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/point.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/box.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/point.hpp \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -154,13 +154,13 @@ CMakeFiles/generator.dir/generator.cpp.o: \
  /usr/include/c++/12/bits/ostream.tcc \
  /usr/include/c++/12/bits/istream.tcc \
  /usr/include/c++/12/bits/sstream.tcc \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/primitive.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/primitive.hpp \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
  /usr/include/c++/12/bits/vector.tcc \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/plane.hpp \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/sphere.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/plane.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/sphere.hpp \
  /usr/include/c++/12/math.h /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -184,9 +184,9 @@ CMakeFiles/generator.dir/generator.cpp.o: \
  /usr/include/c++/12/tr1/poly_hermite.tcc \
  /usr/include/c++/12/tr1/poly_laguerre.tcc \
  /usr/include/c++/12/tr1/riemann_zeta.tcc \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/cone.hpp \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/torus.hpp \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/./headers/primitive.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/cone.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/torus.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/./headers/primitive.hpp \
  /usr/include/c++/12/iostream /usr/include/c++/12/fstream \
  /usr/include/c++/12/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/basic_file.h \

@@ -1,10 +1,8 @@
 #include "headers/group.hpp"
 
 static int drawMode = 0, eixos = 0;
-static float alpha, betha, radius;
-Point position, lookAt, up, projection;
-
 double timebase, elapsed = 0;
+Camera cam;
 
 Tree tagsXML = Tree();
 
@@ -37,27 +35,6 @@ void drawGroup(Group group){
     glPopMatrix();
 }
 
-void moveCamera(){
-    position.setX(radius * cos(betha) * sin(alpha));
-    position.setY(radius * sin(betha));
-    position.setZ(radius * cos(betha) * cos(alpha));   
-}
-
-void convertToSpherical() {
-
-    if (position.getX() == 0) position.setX(0.0000001);
-    if (position.getY() == 0) position.setY(0.0000001);
-    if (position.getZ() == 0) position.setZ(0.0000001);
-
-    alpha = atan(position.getX() / position.getZ());
-    betha = tan((position.getY() * sin(alpha)) / position.getX());
-
-    if (betha >= M_PI / 2) betha -= M_PI;
-    if (betha <= -M_PI / 2) betha += M_PI;
-
-    radius = position.getY() / sin(betha);
-}
-
 void draw_axis(void)
 {
     glBegin(GL_LINES);
@@ -65,17 +42,17 @@ void draw_axis(void)
     // X axis in red
     glColor3f(1.0f, 0.0f, 0.0f);
     glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(100.0f, 0.0f, 0.0f);
+    glVertex3f(500.0f, 0.0f, 0.0f);
 
     // Y Axis in Green
     glColor3f(0.0f, 1.0f, 0.0f);
     glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, 100.0f, 0.0f);
+    glVertex3f(0.0f, 500.0f, 0.0f);
 
     // Z Axis in Blue
     glColor3f(0.0f, 0.0f, 1.0f);
     glVertex3f(0.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, 0.0f, 100.0f);
+    glVertex3f(0.0f, 0.0f, 500.0f);
     glEnd();
 }
 
@@ -116,10 +93,10 @@ void changeSize(int w, int h) {
     glViewport(0, 0, w, h);
 
     // Set perspective
-    gluPerspective(projection.getX(), 
+    gluPerspective(cam.getProjection().getX(), 
                    ratio, 
-                   projection.getY(), 
-                   projection.getZ());
+                   cam.getProjection().getY(), 
+                   cam.getProjection().getZ());
 
     // return to the model view matrix mode
     glMatrixMode(GL_MODELVIEW);
@@ -133,10 +110,11 @@ void renderScene()
     // set the camera
     glLoadIdentity();
 
-    moveCamera();
-    gluLookAt(position.getX(), position.getY(), position.getZ(), 
-              lookAt.getX(), lookAt.getY(), lookAt.getZ(),
-              up.getX(), up.getY(), up.getZ());
+    cam.moveCamera();
+
+    gluLookAt(cam.getPosition().getX(), cam.getPosition().getY(), cam.getPosition().getZ(), 
+              cam.getLookAt().getX(), cam.getLookAt().getY(), cam.getLookAt().getZ(),
+              cam.getUp().getX(), cam.getUp().getY(), cam.getUp().getZ());
 
     // draw 
     if (eixos)
@@ -147,48 +125,47 @@ void renderScene()
     drawGroup(tagsXML.getGroup());
 
     elapsed = chekkFPS();
-    //printf("FPS: %f\n", elapsed);
 
     // end of frame
     glutSwapBuffers();
+
+    // always update the time
     glutPostRedisplay();
 }
 
 
 void processKeys(unsigned char c, int xx, int yy) {
-
     switch (c)
     {
-    case '0':
-        drawMode = 0;
-        break;
+        case '0':
+            drawMode = 0;
+            break;
 
-    case '1':
-        drawMode = 1;
-        break;
-    
-    case '2':
-        drawMode = 2;
-        break;
-    
-    case '+':
-        radius -= 2;
-        break;
-    
-    case '-':
-        radius += 2;
-        break;
-    
-    case '.':
-        eixos = 1 - eixos;
+        case '1':
+            drawMode = 1;
+            break;
+        
+        case '2':
+            drawMode = 2;
+            break;
+        
+        case '+':
+            cam.setRadius(2, '-');
+            break;
+        
+        case '-':
+            cam.setRadius(2, '+');
+            break;
+        
+        case '.':
+            eixos = 1 - eixos;
 
-    default:
-        break;
+        default:
+            break;
     }
     
-    if (radius <= 0) radius = 1;
-
-    glutPostRedisplay();
+    if (cam.getRadius() <= 0) cam.setRadius(1, '=');
+    if (cam.getRadius() >= 500) cam.setRadius(500, '=');
 }
 
 
@@ -197,29 +174,27 @@ void processSpecialKeys(int key, int xx, int yy) {
     switch (key)
     {
         case GLUT_KEY_UP:
-            betha += 0.1;
+            cam.setBetha(0.1, '+');
             break;
         
         case GLUT_KEY_DOWN:
-            betha -= 0.1;
+            cam.setBetha(0.1, '-');
             break;
         
         case GLUT_KEY_LEFT:
-            alpha -= 0.1;
+            cam.setAlpha(0.1, '-');
             break;
         
         case GLUT_KEY_RIGHT:
-            alpha += 0.1;
+            cam.setAlpha(0.1, '+');
             break;
         
         default:
             break;
     }
-
-    if (betha >= 1.5) betha = 1.5;
-    if (betha <= -1.5) betha = -1.5;
-
-    glutPostRedisplay();
+    
+    if (cam.getBetha() >= 1.5) cam.setBetha(1.5, '=');
+    if (cam.getBetha() <= -1.5) cam.setBetha(1.5, '=');
 }
 
 int main(int argc, char **argv) {
@@ -243,10 +218,7 @@ int main(int argc, char **argv) {
     // Callback registration for keyboard processing
     glutKeyboardFunc(processKeys);
     glutSpecialFunc(processSpecialKeys);
-    if(glewInit()!=GLEW_OK) {
-        printf("glew init failed\n");
-        return 1;
-    }
+    glewInit();
     glEnableClientState(GL_VERTEX_ARRAY);
     
     //  OpenGL settings
@@ -256,12 +228,9 @@ int main(int argc, char **argv) {
     std::string filename = std::string("../xmlFiles/") + argv[1];
     tagsXML = readXML(filename.c_str());
 
-    position = tagsXML.getCamera().getPosition();
-    lookAt = tagsXML.getCamera().getLookAt();
-    up = tagsXML.getCamera().getUp();
-    projection = tagsXML.getCamera().getProjection();
+    cam = tagsXML.getCamera();
     
-    convertToSpherical();
+    cam.convertToSpherical();
 
     timebase = glutGet(GLUT_ELAPSED_TIME);
 

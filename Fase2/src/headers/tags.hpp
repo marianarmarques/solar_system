@@ -172,10 +172,10 @@ class Model {
         
         void printModel() {
             cout << "Model file: " << getFile() << endl;
-            /*cout << "Model points: " << endl;
+            cout << "Model points: " << endl;
             for (int i = 0; i < points->size(); i++) {
                 cout << points->at(i).getX() << " " << points->at(i).getY() << " " << points->at(i).getZ() << endl;
-            }*/
+            }
         }
 
         Model() {

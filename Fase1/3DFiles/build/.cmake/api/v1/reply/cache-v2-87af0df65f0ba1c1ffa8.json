@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build"
+			"value" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -535,7 +535,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "TRUE"
+			"value" : "ON"
 		},
 		{
 			"name" : "CMAKE_EXTRA_GENERATOR",
@@ -559,7 +559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -1487,7 +1487,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/build"
+			"value" : "/home/m_rmarques/University/3ano/Project_CG/Fase2/build"
 		},
 		{
 			"name" : "project_cg_IS_TOP_LEVEL",

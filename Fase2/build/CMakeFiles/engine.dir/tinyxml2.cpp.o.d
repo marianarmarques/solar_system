@@ -1,7 +1,7 @@
 CMakeFiles/engine.dir/tinyxml2.cpp.o: \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/tinyxml2.cpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/tinyxml2.cpp \
  /usr/include/stdc-predef.h \
- /home/m_rmarques/University/3ano/CG/ProjetoCG/Fase2/src/headers/tinyxml2.hpp \
+ /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/tinyxml2.hpp \
  /usr/include/c++/12/cctype \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \

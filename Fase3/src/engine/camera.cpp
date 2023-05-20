@@ -1,6 +1,25 @@
 #include "headers/camera.hpp"
 
-static float alpha, betha, radius;
+void Camera::moveCamera(){
+    position.setX(radius * cos(betha) * sin(alpha));
+    position.setY(radius * sin(betha));
+    position.setZ(radius * cos(betha) * cos(alpha));  
+}
+
+void Camera::convertToSpherical() {
+
+    if (position.getX() == 0) position.setX(0.0000001);
+    if (position.getY() == 0) position.setY(0.0000001);
+    if (position.getZ() == 0) position.setZ(0.0000001);
+
+    alpha = atan(position.getX() / position.getZ());
+    betha = tan((position.getY() * sin(alpha)) / position.getX());
+
+    if (betha >= M_PI / 2) betha -= M_PI;
+    if (betha <= -M_PI / 2) betha += M_PI;
+
+    radius = position.getY() / sin(betha);
+}
 
 Camera readCamera(tinyxml2::XMLNode *world)
 {
@@ -24,5 +43,5 @@ Camera readCamera(tinyxml2::XMLNode *world)
                      stof(world->FirstChildElement("camera")->FirstChildElement("projection")->Attribute("near")),
                      stof(world->FirstChildElement("camera")->FirstChildElement("projection")->Attribute("far")));
 
-    return Camera(position, up, lookAt, projection);
+    return Camera(position, up, lookAt, projection, 0, 0, 0);
 }
