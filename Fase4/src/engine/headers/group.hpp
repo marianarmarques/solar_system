@@ -218,8 +218,8 @@ class Color {
         }
 
         Color() {
-            diffuse = Point(200/255, 200/255, 200/255);
-            ambient = Point(50/255, 50/255, 50/255);
+            diffuse = Point(200, 200, 200);
+            ambient = Point(50, 50, 50);
             specular = Point(0, 0, 0);
             emissive = Point(0, 0, 0);
             shininess = 0;
@@ -254,9 +254,9 @@ class Model {
         void printModel() {
             cout << "File: " << file << endl;
             cout << "Texture: " << textureModel.first << endl;
-            /*for(int i = 0; i < textureModel.second.size(); i++) {
+            for(int i = 0; i < textureModel.second.size(); i++) {
                 cout << "Texture " << i << ": " << textureModel.second.at(i).getX() << " " << textureModel.second.at(i).getY() << endl;
-            }*/
+            }
             cout << "Points: " << endl;
             for (int i = 0; i < points.size(); i++) {
                 points.at(i).printPoint();
@@ -391,10 +391,10 @@ class Tree {
                 cout << "Value: " << it->second << endl;
             }
             cout << "Textures: " << endl;
-            /*for (auto it = mapTextures.begin(); it != mapTextures.end(); it++) {
+            for (auto it = mapTextures.begin(); it != mapTextures.end(); it++) {
                 cout << "Key: " << it->first << endl;
                 cout << "Value: " << it->second << endl;
-            }*/
+            }
         }
 
         Tree() {

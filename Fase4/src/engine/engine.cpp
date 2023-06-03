@@ -13,6 +13,8 @@ double chekkFPS(){
 }
 
 void drawGroup(Group group){
+    float white[4] = {1.0, 1.0, 1.0, 1.0};
+    glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, white);
     glPushMatrix();
 
     // Transformations
@@ -43,7 +45,11 @@ void drawGroup(Group group){
             glBindTexture(GL_TEXTURE_2D, tagsXML.getMapTextures().at(model.getTextureModel().first));
         }
 
+        glEnable(GL_LIGHTING);
         glDrawArrays(GL_TRIANGLES, 0, model.getPoints().size());
+
+        glBindTexture(GL_TEXTURE_2D, 0);
+        glDisable(GL_LIGHTING);
     }    
 
     for(Group g: group.getGroups()){
@@ -135,11 +141,11 @@ void renderScene()
 
     updateDrawMode();
 
+    cam.moveCamera();
+
     gluLookAt(cam.getPosition().getX(), cam.getPosition().getY(), cam.getPosition().getZ(), 
               cam.getLookAt().getX(), cam.getLookAt().getY(), cam.getLookAt().getZ(),
               cam.getUp().getX(), cam.getUp().getY(), cam.getUp().getZ());
-
-    cam.moveCamera();
 
     for(auto light : tagsXML.getLights().getLights()) {
         light->doAction();
@@ -173,11 +179,11 @@ void processKeys(unsigned char c, int xx, int yy) {
             break;
         
         case '+':
-            cam.setRadius(0.2, '-');
+            cam.setRadius(1, '-');
             break;
         
         case '-':
-            cam.setRadius(0.2, '+');
+            cam.setRadius(1, '+');
             break;
         
         case '.':
@@ -255,7 +261,6 @@ int main(int argc, char **argv) {
     glEnable(GL_RESCALE_NORMAL);
     glEnable(GL_TEXTURE_2D);
     ilEnable(IL_ORIGIN_SET);
-    glEnable(GL_LIGHTING);
     ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
 
     std::string filename = std::string("../xmlFiles/") + argv[1];

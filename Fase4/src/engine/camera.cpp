@@ -12,13 +12,15 @@ void Camera::convertToSpherical() {
     if (position.getY() == 0) position.setY(0.0000001);
     if (position.getZ() == 0) position.setZ(0.0000001);
 
-    alpha = atan(position.getX() / position.getZ());
-    betha = tan((position.getY() * sin(alpha)) / position.getX());
+    // calc alpha  e beta
+    alpha = atan(position.getZ() / position.getX());
+    betha = atan(position.getY() / sqrt(pow(position.getX(), 2) + pow(position.getZ(), 2)));
 
     if (betha >= M_PI / 2) betha -= M_PI;
     if (betha <= -M_PI / 2) betha += M_PI;
 
-    radius = position.getY() / sin(betha);
+    radius = sqrt(pow(position.getX() - lookAt.getX(), 2) + pow(position.getY() - lookAt.getY(), 2) + pow(position.getZ() - lookAt.getZ(), 2));
+    printf("alpha: %f, betha: %f, radius: %f\n", alpha, betha, radius);
 }
 
 Camera readCamera(tinyxml2::XMLNode *world)

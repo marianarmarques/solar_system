@@ -12,7 +12,7 @@ class Point2D {
         float getY() const {return y;}
 
         void printPoint() {
-            cout << "x:" << x << ", " << y << "y:" << endl;
+            cout << "x:" << x << " y:" << y << endl;
         }
 
         Point2D(){

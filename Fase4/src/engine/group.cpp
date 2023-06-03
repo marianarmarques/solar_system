@@ -175,8 +175,9 @@ vector<Point2D> read_2DPoint(ifstream *file){
             float x, y;
             *file >> x;
             *file >> y;
-            
+        
             vectorPoints.push_back(Point2D(x, y));
+            
         }
     }
     return vectorPoints;
@@ -212,7 +213,7 @@ unsigned loadTexture(string filename) {
 
     ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
     texData = ilGetData();
-
+    
     glGenTextures(1, &texID);
 
     glBindTexture(GL_TEXTURE_2D, texID);

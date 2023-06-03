@@ -149,17 +149,21 @@ void Bezier::point_generator() {
             for(int tu = 0; tu < tessellation; tu++) {
                 float u = (float) tu/tessellation;
 
-                Point p1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 0);
-                Point p2 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)), 0);
-                Point p3 = getBezierPoint(it->first, u, v, 0);
-                Point p4 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v, 0);
-
-                Point v1 = Point(), 
+                Point p1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 0),
+                      p2 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)), 0),
+                      p3 = getBezierPoint(it->first, u, v, 0),
+                      p4 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v, 0),
+                      v1 = Point(), 
                       v2 = Point(), 
                       n1 = Point(), 
                       n2 = Point(), 
                       n3 = Point(), 
                       n4 = Point();
+                
+                Point2D t1 = Point2D(u + (1.0f/tessellation), v + (1.0f/tessellation)),
+                        t2 = Point2D(u, v + (1.0f/tessellation)),
+                        t3 = Point2D(u, v),
+                        t4 = Point2D(u + (1.0f/tessellation), v);
                 
                 v1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 1);
                 v2 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 2);
@@ -190,6 +194,10 @@ void Bezier::point_generator() {
                 addNormal(n2);
                 addNormal(n1);
 
+                addTexture(t3);
+                addTexture(t2);
+                addTexture(t1);
+
                 // 2nd triangle
                 addPoint(p1);
                 addPoint(p4);
@@ -198,6 +206,10 @@ void Bezier::point_generator() {
                 addNormal(n1);
                 addNormal(n4);
                 addNormal(n3);
+
+                addTexture(t1);
+                addTexture(t4);
+                addTexture(t3);
             }
         }
     }
