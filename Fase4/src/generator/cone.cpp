@@ -1,95 +1,71 @@
 #include "headers/cone.hpp"
 
-map<int, vector<Point>> Cone::point_generator() {
+void Cone::point_generator() {
 
-    vector<Point> points = vector<Point>(), normals = vector<Point>();
+    float alpha = (2 * M_PI) / slices;       
+    // float beta = M_PI / stacks;   
 
-    float stack_height = height/stacks; 
-    float angle = (2 * M_PI) / slices;
-
-    for (int i = 0; i < slices; i++) { // Base e Lados
+    for(float i=0; i<slices; i++) {
         
-        Point p1 = Point(0.0f,0.0f,0.0f);
-        Point p2 = Point(radius * sin(angle * (i+1)),0.0f,radius * cos(angle * (i+1)));
-        Point p3 = Point(radius * sin(angle * i),0.0f,radius * cos(angle * i));
-        Point p4 = Point(0.0f,height,0.0f);
+        for(float j=0; j<stacks; j++) {
+            float stackHeight = (height / stacks) * j,
+                  nextRadius = (height - stackHeight) * radius / height,
+                  stackHeight2 = (height / stacks) * (j + 1),
+                  nextRadius2 = (height - stackHeight2) * radius / height;    
+             
+            if (j==0) { // Base
+                Point p1 = Point(0,0,0);
+                Point p2 = Point(radius * cos((i+1)*alpha), 0, radius*-sin((i+1)*alpha));
+                Point p3 = Point(radius * cos(i*alpha), 0, radius*-sin(i*alpha));
 
-        Point v11 = Point(), v12 = Point(), normal11 = Point(), normal12 = Point(), normal13 = Point(), normal14 = Point();
+                addPoint(p1);
+                addPoint(p2);
+                addPoint(p3);
 
-        v11.subPoints(&p1, &p2);
-        v12.subPoints(&p1, &p3);
-        normal11.cross(&v11, &v12);
-        normal11.normalize();
+                addNormal(Point(0,-1,0));
+                addNormal(Point(0,-1,0));
+                addNormal(Point(0,-1,0));
+            }
 
-        v11.subPoints(&p2, &p3);
-        v12.subPoints(&p2, &p4);
-        normal12.cross(&v11, &v12);
-        normal12.normalize();
+            Point p4 = Point(nextRadius2 * cos(alpha * i), stackHeight2, nextRadius2 * sin(alpha * i)); 
+            Point p5 = Point(nextRadius2 * cos(alpha * (i + 1)), stackHeight2, nextRadius2 * sin(alpha * (i + 1))); 
+            Point p6 = Point(nextRadius * cos(alpha * i), stackHeight, nextRadius * sin(alpha * i)); 
+            Point p7 = Point(nextRadius * cos(alpha * (i + 1)), stackHeight, nextRadius * sin(alpha * (i + 1)));
 
-        v11.subPoints(&p3, &p4);
-        v12.subPoints(&p3, &p1);
-        normal13.cross(&v11, &v12);
-        normal13.normalize();
+            float hip1 = sqrt(pow(nextRadius, 2) + pow(stackHeight, 2));
+            float cone_x1 = nextRadius / hip1;
+            float cone_y1 = -stackHeight / hip1;
 
-        v11.subPoints(&p4, &p1);
-        v12.subPoints(&p4, &p2);
-        normal14.cross(&v11, &v12);
-        normal14.normalize();
-        
-        // Base 
-        points.push_back(p1);
-        points.push_back(p2);
-        points.push_back(p3);
+            float hip2 = sqrt(pow(nextRadius2, 2) + pow(stackHeight2, 2));
+            float cone_x2 = nextRadius2 / hip2;
+            float cone_y2 = -stackHeight2 / hip2; 
 
-        normals.push_back(normal11);
-        normals.push_back(normal12);
-        normals.push_back(normal13);
+            Point n4 = Point(-cone_y2 * cos(alpha * i), cone_x2, -cone_y2 * sin(alpha * i));
+            n4.normalize();
+            Point n5 = Point(-cone_y2 * cos(alpha * (i + 1)), cone_x2, -cone_y2 * sin(alpha * (i + 1)));
+            n5.normalize();
+            Point n6 = Point(-cone_y1 * cos(alpha * i), cone_x1, -cone_y1 * sin(alpha * i));
+            n6.normalize();
+            Point n7 = Point(-cone_y1 * cos(alpha * (i + 1)), cone_x1, -cone_y1 * sin(alpha * (i + 1)));
+            n7.normalize();
 
-        // Lados
-        points.push_back(p4);
-        points.push_back(p3);
-        points.push_back(p2);
+            // 1st triangle 
+            addPoint(p4);
+            addPoint(p5);
+            addPoint(p6);
 
-        normals.push_back(normal14);
-        normals.push_back(normal13);
-        normals.push_back(normal12);
+            addNormal(n4);
+            addNormal(n5);
+            addNormal(n6);
 
-    }
+            // 2nd triangle
+            addPoint(p6);
+            addPoint(p5);
+            addPoint(p7);
 
-    for(int i=1;i<stacks;i++){ // Stacks
-        for(int j=0;j<slices;j++){
-            Point p1 = Point((radius - (radius/stacks) * (i-1)) * sin(angle * (j+1)),stack_height*(i-1),(radius - (radius/stacks) * (i-1)) * cos(angle * (j+1)));
-            Point p2 = Point((radius - (radius/stacks) * i) * sin(angle * (j+1)),stack_height*i,(radius - (radius/stacks) * i) * cos(angle * (j+1)));
-            Point p3 = Point((radius - (radius/stacks) * i) * sin(angle * j),stack_height*i,(radius - (radius/stacks) * i) * cos(angle * j));
-
-            Point v11 = Point(), v12 = Point(), normal11 = Point(), normal12 = Point(), normal13 = Point();
-
-            v11.subPoints(&p1, &p2);
-            v12.subPoints(&p1, &p3);
-            normal11.cross(&v11, &v12);
-            normal11.normalize();
-
-            v11.subPoints(&p2, &p3);
-            v12.subPoints(&p2, &p1);
-            normal12.cross(&v11, &v12);
-            normal12.normalize();
-
-            v11.subPoints(&p3, &p1);
-            v12.subPoints(&p3, &p2);
-            normal13.cross(&v11, &v12);
-            normal13.normalize();
-
-            points.push_back(p1);
-            points.push_back(p2);
-            points.push_back(p3);
-
-            normals.push_back(normal11);
-            normals.push_back(normal12);
-            normals.push_back(normal13);
-
+            addNormal(n6);
+            addNormal(n5);
+            addNormal(n7);
         }
-
     }
-
-    return {{0, points}, {1, normals}};
 }

@@ -109,12 +109,12 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "utils/headers/utils.hpp",
+			"path" : "utils/headers/point.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "utils/headers/point.hpp",
+			"path" : "utils/headers/point2d.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

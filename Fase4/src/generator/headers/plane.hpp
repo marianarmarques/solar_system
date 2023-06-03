@@ -12,7 +12,7 @@ class Plane : public Primitive {
         float getLength() const {return length;}
         int getGrid() const {return grid;}
 
-        map<int, vector<Point>> point_generator();
+        void point_generator();
         
         Plane(float length, int grid) {
             this->length = length;

@@ -1,6 +1,7 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 
+#include <iostream>
 #include <sstream>
 #include <cmath>
 
@@ -39,6 +40,24 @@ class Point {
             x = a->getY() * b->getZ() - a->getZ() * b->getY();
             y = a->getZ() * b->getX() - a->getX() * b->getZ();
             z = a->getX() * b->getY() - a->getY() * b->getX();
+
+            if(x == 0 && y == 0 && z == 0) {
+                x = 0;
+                y = -1;
+                z = 0;
+                /*if(a->isZero()) {
+                    a->operator=(Point(0.01, 0.7, 0.01));
+                    x = a->getY() * b->getZ() - a->getZ() * b->getY();
+                    y = a->getZ() * b->getX() - a->getX() * b->getZ();
+                    z = a->getX() * b->getY() - a->getY() * b->getX();
+                }
+                else {
+                    b->operator=(Point(0.01, 0.7, 0.01));
+                    x = a->getY() * b->getZ() - a->getZ() * b->getY();
+                    y = a->getZ() * b->getX() - a->getX() * b->getZ();
+                    z = a->getX() * b->getY() - a->getY() * b->getX();
+                }*/
+            }
         }
 
         void normalize() {
@@ -46,6 +65,10 @@ class Point {
             x = x / norm;
             y = y / norm;
             z = z / norm;
+        }
+
+        void printPoint() {
+            cout << "x: " << x << " y: " << y << " z: " << z << endl;
         }
 
         Point() {

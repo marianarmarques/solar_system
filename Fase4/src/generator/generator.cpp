@@ -1,5 +1,5 @@
-#include "./headers/box.hpp"
 #include "./headers/plane.hpp"
+#include "./headers/box.hpp"
 #include "./headers/sphere.hpp"
 #include "./headers/cone.hpp"
 #include "./headers/torus.hpp"
@@ -12,22 +12,36 @@ void create_3D_file(Primitive* primitive, string filename) {
     
     ofstream file("../3DFiles/" + filename);
 
-    for(auto map : primitive->point_generator()) {
-        int size = map.second.size();
+    primitive->point_generator();
 
-        file << size << endl;
-        for(auto point : map.second) {
-            file << point.getX() << " " << point.getY() << " " << point.getZ() << endl;
-        }
+    file << primitive->getPoints().size() << endl;
+    for(auto it = primitive->getPoints().begin(); it != primitive->getPoints().end(); it++) {
+        file << (*it).getX() << " " << (*it).getY() << " " << (*it).getZ() << endl;
     }
 
+    file << primitive->getNormals().size() << endl;
+    for(auto it = primitive->getNormals().begin(); it != primitive->getNormals().end(); it++) {
+        file << (*it).getX() << " " << (*it).getY() << " " << (*it).getZ() << endl;
+    }
 
+    file << primitive->getTextures().size() << endl;
+    for(auto it = primitive->getTextures().begin(); it != primitive->getTextures().end(); it++) {
+        file << (*it).getX() << " " << (*it).getY() << endl;
+    }
 }
 
 void primitive_handler(int arg_numb, char** data) {
     string primitive_name = data[1];
 
-    if (primitive_name == "box" && arg_numb == 5) {
+    if (primitive_name == "plane" && arg_numb == 5) {
+
+        float length = stof(data[2]);
+        int grid = stoi(data[3]);
+        Plane plane(length, grid);
+
+        create_3D_file(&plane, data[4]);
+    }
+    else if (primitive_name == "box" && arg_numb == 5) {
         
         float length = stof(data[2]);
         int grid = stoi(data[3]);
@@ -43,14 +57,6 @@ void primitive_handler(int arg_numb, char** data) {
         Sphere sphere(radius, slices, stacks);
 
         create_3D_file(&sphere, data[5]);
-    }
-    else if (primitive_name == "plane" && arg_numb == 5) {
-
-        float length = stof(data[2]);
-        int grid = stoi(data[3]);
-        Plane plane(length, grid);
-
-        create_3D_file(&plane, data[4]);
     }
     else if (primitive_name == "cone" && arg_numb == 7) {
 

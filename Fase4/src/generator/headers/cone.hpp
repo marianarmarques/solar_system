@@ -2,7 +2,6 @@
 #define CONE_HPP
 
 #include "../../generator/headers/primitive.hpp"
-#include <cmath>
 
 class Cone : public Primitive {
     private:
@@ -15,7 +14,7 @@ class Cone : public Primitive {
         int getSlices() const {return slices;}
         int getStacks() const {return stacks;}
 
-        map<int, vector<Point>> point_generator();
+        void point_generator();
 
         Cone(float radius, float height, int slices, int stacks) {
             this->radius = radius;

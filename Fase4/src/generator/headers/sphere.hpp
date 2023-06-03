@@ -2,7 +2,6 @@
 #define SPHERE_HPP
 
 #include "../../generator/headers/primitive.hpp"
-#include <cmath>
 
 class Sphere : public Primitive {
     private:
@@ -15,7 +14,7 @@ class Sphere : public Primitive {
         int getSlices() const {return slices;}
         int getStacks() const {return stacks;}
 
-        map<int, vector<Point>> point_generator();
+        void point_generator();
         
         Sphere(float radius, int slices, int stacks) {
             this->radius = radius;

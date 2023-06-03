@@ -2,11 +2,6 @@
 #define BEZIER_HPP
 
 #include "../../generator/headers/primitive.hpp"
-#include "../../utils/headers/utils.hpp"
-#include <cmath>
-#include <fstream>
-#include <iostream>
-#include <map>
 
 class Bezier : public Primitive {
     private:
@@ -20,8 +15,10 @@ class Bezier : public Primitive {
         map<int, vector<Point>> getPatches() const {return patches;}
         
         void parsePatch();
-        Point getBezierPoint(int p, float u, float v);
-        map<int, vector<Point>>  point_generator();
+        
+        Point getBezierPoint(int p, float u, float v, int flag);
+        
+        void point_generator();
 
         Bezier() {
             file = "";

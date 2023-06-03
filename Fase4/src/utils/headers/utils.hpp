@@ -1,6 +1,7 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
+#include "point.hpp"
 #include <cmath>
 
 class utils {
@@ -43,6 +44,10 @@ class utils {
             res->setY(a->getZ() * b->getX() - a->getX() * b->getZ());
             res->setZ(a->getX() * b->getY() - a->getY() * b->getX());
         } 
+
+        static void dot(Point *a, Point *b, float *res) {
+            *res = a->getX() * b->getX() + a->getY() * b->getY() + a->getZ() * b->getZ();
+        }
 };
 
 #endif

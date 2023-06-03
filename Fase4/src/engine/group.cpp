@@ -1,6 +1,7 @@
 #include "headers/group.hpp"
 
 map<string, unsigned int*> modelsVBOs = map<string, unsigned int*>();
+map<string, unsigned int> mapTextures = map<string, unsigned int>(); // key > texture name | value > texture id
 
 void Translation::getCatmullRomPoint(float t, Point p1, Point p2, Point p3, Point p4, Point *pos, Point *deriv) {
     
@@ -165,7 +166,23 @@ Transforms readTransforms(tinyxml2::XMLNode *group)
     return transforms;
 }
 
-vector<Point> read_3D_File(ifstream *file){
+vector<Point2D> read_2DPoint(ifstream *file){
+    vector<Point2D> vectorPoints = vector<Point2D>();
+    int nrVertices;
+    
+    if(*file >> nrVertices) {
+        for (int i = 0; i < nrVertices; i++) {
+            float x, y;
+            *file >> x;
+            *file >> y;
+            
+            vectorPoints.push_back(Point2D(x, y));
+        }
+    }
+    return vectorPoints;
+}
+
+vector<Point> read_3DPoint(ifstream *file){
     vector<Point> vectorPoints = vector<Point>();
     int nrVertices;
     
@@ -175,12 +192,42 @@ vector<Point> read_3D_File(ifstream *file){
             *file >> x;
             *file >> y;
             *file >> z;
-
+            
             vectorPoints.push_back(Point(x, y, z));
         }
     }
     return vectorPoints;
 }
+
+unsigned loadTexture(string filename) {
+    unsigned int t, tw, th;
+    unsigned char *texData;
+    unsigned int texID;
+
+    ilGenImages(1, &t);
+    ilBindImage(t);
+    ilLoadImage((ILstring)  (string("../textures/") + filename).c_str());
+    tw = ilGetInteger(IL_IMAGE_WIDTH);
+    th = ilGetInteger(IL_IMAGE_HEIGHT);
+
+    ilConvertImage(IL_RGBA, IL_UNSIGNED_BYTE);
+    texData = ilGetData();
+
+    glGenTextures(1, &texID);
+
+    glBindTexture(GL_TEXTURE_2D, texID);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tw, th, 0, GL_RGBA, GL_UNSIGNED_BYTE, texData);     
+
+    return texID; 
+}
+
 
 Models readModels(tinyxml2::XMLNode *group)
 {
@@ -198,26 +245,32 @@ Models readModels(tinyxml2::XMLNode *group)
     {
         string filename = m->ToElement()->Attribute("file");
         string path = "../3DFiles/" + filename;
-
         ifstream file(path);
+
         if (file.fail()){
             string s = "File does not exist: " + filename;
             throw (s);
         }
-
-        map<int, vector<Point>> mapModel = map<int, vector<Point>>();
         
-        vector<Point> points = read_3D_File(&file);
-        mapModel.insert(pair<int, vector<Point>>(0, points));
+        vector<Point> points = read_3DPoint(&file);
+        vector<Point> normals = read_3DPoint(&file);
+        vector<Point2D> textures = vector<Point2D>();
+        
+        tinyxml2::XMLElement *texture = m->FirstChildElement("texture");
+        string t_filename = "";
+        if(texture) {
+            t_filename = texture->ToElement()->Attribute("file");
 
-        vector<Point> normals = read_3D_File(&file);
-        mapModel.insert(pair<int, vector<Point>>(1, normals));
+            textures = read_2DPoint(&file);
 
-        //vector<Point> textures = read_3D_File(&file);
+            if(mapTextures.find(t_filename) == mapTextures.end()) { // LOAD TEXTURE IF NOT ALREADY LOADED
+                mapTextures.insert(pair<string, unsigned int>(t_filename, loadTexture(t_filename)));
+            }
+        }
 
+        file.close();
 
-        Color c = Color();
-    
+        Color c = Color();    
         tinyxml2::XMLElement *color = m->FirstChildElement("color");
         if(color) {
                 tinyxml2::XMLElement* type = color->FirstChildElement();
@@ -268,7 +321,7 @@ Models readModels(tinyxml2::XMLNode *group)
         }
 
         if(modelsVBOs.find(filename) != modelsVBOs.end()) { // IF ALREADY EXISTS
-            models.addModel(Model(filename, mapModel, modelsVBOs.find(filename)->second, c));
+            models.addModel(Model(filename, pair<string, vector<Point2D>>(t_filename, textures), points, normals, modelsVBOs.find(filename)->second, c));
 
             m = m->NextSiblingElement("model");
             
@@ -276,9 +329,7 @@ Models readModels(tinyxml2::XMLNode *group)
         }
         
         unsigned int mapSize = modelsVBOs.size();
-        unsigned int* idVBOs = new unsigned int[2];
-        idVBOs[0] = mapSize;
-        idVBOs[1] = mapSize + 1;
+        unsigned int *idVBOs = new unsigned int[3];  
 
         modelsVBOs.insert(pair<string, unsigned int*>(filename, idVBOs));
         auto modelVBOs = modelsVBOs.find(filename);
@@ -294,20 +345,32 @@ Models readModels(tinyxml2::XMLNode *group)
             points.data(), // VECTOR DATA
             GL_STATIC_DRAW); // USAGE
         
-        glGenBuffers(1, &modelVBOs->second[1]);
-        
         // normals
-        glGenBuffers(1, &modelVBOs->second[1]); 
+        if(!normals.empty()) { 
+            glGenBuffers(1, &modelVBOs->second[1]); 
 
-        glBindBuffer(GL_ARRAY_BUFFER, modelVBOs->second[1]);
+            glBindBuffer(GL_ARRAY_BUFFER, modelVBOs->second[1]);
 
-        glBufferData(
-            GL_ARRAY_BUFFER, // TYPE
-            sizeof(float) * normals.size() * 3, // SIZE VECTOR IN BYTES
-            normals.data(), // VECTOR DATA
-            GL_STATIC_DRAW); // USAGE
+            glBufferData(
+                GL_ARRAY_BUFFER, // TYPE
+                sizeof(float) * normals.size() * 3, // SIZE VECTOR IN BYTES
+                normals.data(), // VECTOR DATA
+                GL_STATIC_DRAW); // USAGE
+        }
 
-        models.addModel(Model(filename, mapModel, modelVBOs->second, c));
+        if(!textures.empty()) {
+            glGenBuffers(1, &modelVBOs->second[2]);
+
+            glBindBuffer(GL_ARRAY_BUFFER, modelVBOs->second[2]);
+
+            glBufferData(
+                GL_ARRAY_BUFFER, // TYPE
+                sizeof(float) * textures.size() * 2, // SIZE VECTOR IN BYTES
+                textures.data(), // VECTOR DATA
+                GL_STATIC_DRAW); // USAGE
+        }
+
+        models.addModel(Model(filename, pair<string, vector<Point2D>>(t_filename, textures), points, normals, modelVBOs->second, c));
 
         m = m->NextSiblingElement("model");
     }
@@ -349,5 +412,11 @@ Tree readXML(const char *path)
     
     tinyxml2::XMLElement *group = world->FirstChildElement("group");
 
-    return Tree(readWindow(world), readCamera(world), readLights(world), readGroups(group), modelsVBOs);
+    Window window = readWindow(world);
+    Camera camera = readCamera(world);
+    Lights lights = readLights(world);
+    Group g = readGroups(group); 
+
+
+    return Tree(window, camera, lights, g, modelsVBOs, mapTextures);
 }

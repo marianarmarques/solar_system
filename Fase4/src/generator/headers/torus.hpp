@@ -2,7 +2,6 @@
 #define TORUS_HPP
 
 #include "../../generator/headers/primitive.hpp"
-#include <cmath>
 
 class Torus : public Primitive {
     private:
@@ -17,7 +16,7 @@ class Torus : public Primitive {
         int getSlices() const {return slices;}
         int getStacks() const {return stacks;}
 
-        map<int, vector<Point>> point_generator();
+        void point_generator();
 
         Torus(float radius, float ringRadius, int slices, int stacks) {
             this->radius = radius;
@@ -27,4 +26,4 @@ class Torus : public Primitive {
         }
 };
 
-#endif //ENGINE_TORUS_HPP
+#endif

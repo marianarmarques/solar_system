@@ -23,6 +23,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.24/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.24/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.24/Modules/FindDevIL.cmake"
   "/usr/share/cmake-3.24/Modules/FindGLEW.cmake"
   "/usr/share/cmake-3.24/Modules/FindGLUT.cmake"
   "/usr/share/cmake-3.24/Modules/FindOpenGL.cmake"

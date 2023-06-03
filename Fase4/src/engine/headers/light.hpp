@@ -53,10 +53,9 @@ class DirectionalLight : public Light {
         Point getDirection() const {return direction;}
 
         void doAction() {
-            float dir[4] = {direction.getX(), direction.getY(), direction.getZ(), 0.0};            
-            glLightfv(getId(), GL_POSITION, dir);
+            float dir[4] = {direction.getX(), direction.getY(), direction.getZ(), 0.0};         
+            glLightfv(getId(), GL_POSITION , dir);
         }
-
         void printLight() {
             cout << "Id: " << getId() << endl; 
             cout << "Directional Light" << endl;

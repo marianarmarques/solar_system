@@ -1146,6 +1146,18 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_DevIL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding DevIL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/lib/x86_64-linux-gnu/libIL.so][/usr/lib/x86_64-linux-gnu/libILU.so][/usr/include/IL][v()]"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_GLEW",
 			"properties" : 
 			[
@@ -1336,6 +1348,54 @@
 			],
 			"type" : "FILEPATH",
 			"value" : "/usr/lib/x86_64-linux-gnu/libglut.so"
+		},
+		{
+			"name" : "ILUT_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The file that corresponds to the il (system?) utility library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libILUT.so"
+		},
+		{
+			"name" : "ILU_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The file that corresponds to the il utility library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libILU.so"
+		},
+		{
+			"name" : "IL_INCLUDE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The path to the directory that contains il.h"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include/IL"
+		},
+		{
+			"name" : "IL_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The file that corresponds to the base il library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libIL.so"
 		},
 		{
 			"name" : "OPENGL_EGL_INCLUDE_DIR",

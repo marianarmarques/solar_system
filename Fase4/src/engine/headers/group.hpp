@@ -1,10 +1,12 @@
 #ifndef GROUP_HPP
 #define GROUP_HPP
 
+#include <IL/il.h>
 #include <GL/glew.h>
 #include "GL/glut.h"
 #include "../../utils/headers/tinyxml2.hpp"
 #include "../../utils/headers/point.hpp"
+#include "../../utils/headers/point2d.hpp"
 #include "../../utils/headers/utils.hpp"
 #include "window.hpp"
 #include "camera.hpp"
@@ -235,42 +237,56 @@ class Color {
 class Model {
     private:
         string file;
-        map<int, vector<Point>> mapModel;
+        pair<string, vector<Point2D>> textureModel;
+        vector<Point> points;
+        vector<Point> normals;
         unsigned int* buffers; // ids of vbos
         Color color;
 
     public:
-        std::string getFile() const {return file;}
+        string getFileName() const {return file;}
+        pair<string, vector<Point2D>> getTextureModel() const {return textureModel;}
+        vector<Point> getPoints() const {return points;}
+        vector<Point> getNormals() const {return normals;}
         unsigned int* getBuffers() const {return buffers;}
-        map<int, vector<Point>> getMapModel() const {return mapModel;}
         Color getColor() const {return color;}
-        
-        void printModel() {
-            cout << "Model file: " << file << endl;
-            cout << "Model map: " << mapModel.size() << endl;
-            for (auto it = mapModel.begin(); it != mapModel.end(); ++it) {
-                cout << it->first << " : ";
-                for (int i = 0; i < it->second.size(); i++) {
-                        cout << "Point " << i << ": ";
-                        cout << it->second[i].getX() << " " << it->second[i].getY() << " " << it->second[i].getZ() << endl;
-                    }
-                cout << endl;
-            }
 
-            cout << "Model buffers: " << buffers << endl;
+        void printModel() {
+            cout << "File: " << file << endl;
+            cout << "Texture: " << textureModel.first << endl;
+            /*for(int i = 0; i < textureModel.second.size(); i++) {
+                cout << "Texture " << i << ": " << textureModel.second.at(i).getX() << " " << textureModel.second.at(i).getY() << endl;
+            }*/
+            cout << "Points: " << endl;
+            for (int i = 0; i < points.size(); i++) {
+                points.at(i).printPoint();
+            }
+            cout << "Normals: " << endl;
+            for (int i = 0; i < normals.size(); i++) {
+                normals.at(i).printPoint();
+            }
+            cout << "Buffers: " << endl;
+            for (int i = 0; i < 3; i++) {
+                cout << buffers[i] << endl;
+            }
+            cout << "Color: " << endl;
             color.printColor();
         }
 
         Model() {
-            file = "";
-            mapModel = map<int, vector<Point>>();
-            buffers = NULL;
-            color = Color();
+            this->file = "";
+            this->textureModel = pair<string, vector<Point2D>>("", vector<Point2D>());
+            this->points = vector<Point>();
+            this->normals = vector<Point>();
+            this->buffers = new unsigned int[3];
+            this->color = Color();
         }
 
-        Model(std::string file, map<int, vector<Point>> mapModel, unsigned int* buffers, Color color) {
+        Model(string file, pair<string, vector<Point2D>> textureModel, vector<Point> points, vector<Point> normals, unsigned int* buffers, Color color) {
             this->file = file;
-            this->mapModel = mapModel;
+            this->textureModel = textureModel;
+            this->points = points;
+            this->normals = normals;
             this->buffers = buffers;
             this->color = color;
         }
@@ -351,6 +367,7 @@ class Tree {
         Lights lights;
         Group groups;
         map<string, unsigned int*> modelsVBOs;
+        map<string, unsigned int> mapTextures;
     
     public:
         Window getWindow() const {return window;}
@@ -358,12 +375,14 @@ class Tree {
         Lights getLights() const {return lights;}
         Group getGroup() const {return groups;}
         map<string, unsigned int*> getModelsVBOs() const {return modelsVBOs;}
+        map<string, unsigned int> getMapTextures() const {return mapTextures;}
 
         void printTree() {
             cout << "Window: " << endl;
             window.printWindow();
             cout << "Camera: " << endl;
             camera.printCamera();
+            lights.printLights();
             cout << "Groups: " << endl;
             groups.printGroups();
             cout << "Models VBOs: " << endl;
@@ -371,7 +390,11 @@ class Tree {
                 cout << "Key: " << it->first << endl;
                 cout << "Value: " << it->second << endl;
             }
-            lights.printLights();
+            cout << "Textures: " << endl;
+            /*for (auto it = mapTextures.begin(); it != mapTextures.end(); it++) {
+                cout << "Key: " << it->first << endl;
+                cout << "Value: " << it->second << endl;
+            }*/
         }
 
         Tree() {
@@ -380,14 +403,16 @@ class Tree {
             lights = Lights();
             groups = Group();
             modelsVBOs = map<string, unsigned int*>();
+            mapTextures = map<string, unsigned int>();
         }
 
-        Tree(Window window, Camera camera, Lights lights, Group groups, map<string, unsigned int*> modelsVBOs) {
+        Tree(Window window, Camera camera, Lights lights, Group groups, map<string, unsigned int*> modelsVBOs, map<string, unsigned int> mapTextures) {
             this->window = window;
             this->camera = camera;
             this->lights = lights;
             this->groups = groups;
-            this->modelsVBOs = modelsVBOs;
+            this->modelsVBOs = modelsVBOs;  
+            this->mapTextures = mapTextures;
         }
 };
 

@@ -53,16 +53,59 @@ void Bezier::parsePatch() {
     }
 }
 
-Point Bezier::getBezierPoint(int p, float u, float v) {
+Point Bezier::getBezierPoint(int p, float u, float v, int flag) { 
 
     float m[4][4] = {{-1.0f, +3.0f, -3.0f, +1.0f},
                      {+3.0f, -6.0f, +3.0f, +0.0f},
                      {-3.0f, +3.0f, +0.0f, +0.0f},
                      {+1.0f, +0.0f, +0.0f, +0.0f}};
+    
+    float bu[4], bv[4];
+    switch (flag)
+    {
+        case 0:
+            bu[0] = powf(u,3);
+            bu[1] = powf(u,2);
+            bu[2] = u;
+            bu[3] = 1;
 
+            bv[0] = powf(v,3);
+            bv[1] = powf(v,2);
+            bv[2] = v;
+            bv[3] = 1;
+            
+            break;
 
-    float bu[4] = {powf(u,3),powf(u,2),u,1};
-    float bv[4] = {powf(v,3),powf(v,2),v,1};
+        case 1:
+            bu[0] = 3*powf(u,2);
+            bu[1] = 2*u;
+            bu[2] = 1;
+            bu[3] = 0;
+
+            bv[0] = powf(v,3);
+            bv[1] = powf(v,2);
+            bv[2] = v;
+            bv[3] = 1;
+
+            break;
+        
+        case 2:
+
+            bu[0] = powf(u,3);
+            bu[1] = powf(u,2);
+            bu[2] = u;
+            bu[3] = 1;
+
+            bv[0] = 3*powf(v,2);
+            bv[1] = 2*v;
+            bv[2] = 1;
+            bv[3] = 0;
+
+            break;
+        
+        default:
+            break;
+    }
     
     float points_x[4][4];
     float points_y[4][4];
@@ -91,13 +134,10 @@ Point Bezier::getBezierPoint(int p, float u, float v) {
     float y = utils::multVectors(res_y, res_v);
     float z = utils::multVectors(res_z, res_v);
 
-    Point ponto = Point(x, y, z);
-    return ponto;
-
+    return Point(x, y, z);
 }
 
-map<int, vector<Point>> Bezier::point_generator() {
-    vector<Point> points = vector<Point>(), normals = vector<Point>();
+void Bezier::point_generator() {
 
     parsePatch();
 
@@ -109,53 +149,56 @@ map<int, vector<Point>> Bezier::point_generator() {
             for(int tu = 0; tu < tessellation; tu++) {
                 float u = (float) tu/tessellation;
 
-                Point p1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)));
-                Point p2 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)));
-                Point p3 = getBezierPoint(it->first, u, v);
-                Point p4 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v);
+                Point p1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 0);
+                Point p2 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)), 0);
+                Point p3 = getBezierPoint(it->first, u, v, 0);
+                Point p4 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v, 0);
 
-                Point v1 = Point(), v2 = Point(), normal1 = Point(), normal2 = Point(), normal3 = Point(), normal4 = Point();
+                Point v1 = Point(), 
+                      v2 = Point(), 
+                      n1 = Point(), 
+                      n2 = Point(), 
+                      n3 = Point(), 
+                      n4 = Point();
+                
+                v1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 1);
+                v2 = getBezierPoint(it->first, (u + (1.0f/tessellation)), (v + (1.0f/tessellation)), 2);
+                n1.cross(&v2, &v1);
+                n1.normalize();
+                
+                v1 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)), 1);
+                v2 = getBezierPoint(it->first, u, (v + (1.0f/tessellation)), 2);
+                n2.cross(&v2, &v1);
+                n2.normalize();
 
-                v1.subPoints(&p1, &p2);
-                v2.subPoints(&p1, &p3);
-                normal1.cross(&v1, &v2);
-                normal1.normalize();
+                v1 = getBezierPoint(it->first, u, v, 1);
+                v2 = getBezierPoint(it->first, u, v, 2);
+                n3.cross(&v2, &v1);
+                n3.normalize();
 
-                v1.subPoints(&p2, &p3);
-                v2.subPoints(&p2, &p4);
-                normal2.cross(&v1, &v2);
-                normal2.normalize();
-
-                v1.subPoints(&p3, &p4);
-                v2.subPoints(&p3, &p1);
-                normal3.cross(&v1, &v2);
-                normal3.normalize();
-
-                v1.subPoints(&p4, &p1);
-                v2.subPoints(&p4, &p2);
-                normal4.cross(&v1, &v2);
-                normal4.normalize();
+                v1 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v, 1);
+                v2 = getBezierPoint(it->first, (u + (1.0f/tessellation)), v, 2);
+                n4.cross(&v2, &v1);
+                n4.normalize();
 
                 // 1st triangle
-                points.push_back(p1);
-                points.push_back(p2);
-                points.push_back(p3);
+                addPoint(p3);
+                addPoint(p2);
+                addPoint(p1);
 
-                normals.push_back(normal1);
-                normals.push_back(normal2);
-                normals.push_back(normal3);
-                
+                addNormal(n3);
+                addNormal(n2);
+                addNormal(n1);
+
                 // 2nd triangle
-                points.push_back(p3);
-                points.push_back(p4);
-                points.push_back(p1);
+                addPoint(p1);
+                addPoint(p4);
+                addPoint(p3);
 
-                normals.push_back(normal3);
-                normals.push_back(normal4);
-                normals.push_back(normal1);
+                addNormal(n1);
+                addNormal(n4);
+                addNormal(n3);
             }
         }
     }
-
-    return {{0, points}, {1, normals}};
 }

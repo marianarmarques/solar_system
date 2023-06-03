@@ -29,12 +29,21 @@ void drawGroup(Group group){
         glBindBuffer(GL_ARRAY_BUFFER, model.getBuffers()[0]);
         glVertexPointer(3, GL_FLOAT, 0, 0);
 
-        glBindBuffer(GL_ARRAY_BUFFER, model.getBuffers()[1]);
-        glNormalPointer(GL_FLOAT, 0, 0);
+        if(!model.getNormals().empty()) 
+        {
+            glBindBuffer(GL_ARRAY_BUFFER, model.getBuffers()[1]);
+            glNormalPointer(GL_FLOAT, 0, 0);
+        }
 
-        glEnable(GL_LIGHTING);
-        glDrawArrays(GL_TRIANGLES, 0, model.getMapModel().begin()->second.size());
-        glDisable(GL_LIGHTING);
+        if(!model.getTextureModel().second.empty()) 
+        {
+            glBindBuffer(GL_ARRAY_BUFFER, model.getBuffers()[2]);
+            glTexCoordPointer(2, GL_FLOAT, 0, 0);
+
+            glBindTexture(GL_TEXTURE_2D, tagsXML.getMapTextures().at(model.getTextureModel().first));
+        }
+
+        glDrawArrays(GL_TRIANGLES, 0, model.getPoints().size());
     }    
 
     for(Group g: group.getGroups()){
@@ -124,19 +133,19 @@ void renderScene()
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
+    updateDrawMode();
+
     gluLookAt(cam.getPosition().getX(), cam.getPosition().getY(), cam.getPosition().getZ(), 
               cam.getLookAt().getX(), cam.getLookAt().getY(), cam.getLookAt().getZ(),
               cam.getUp().getX(), cam.getUp().getY(), cam.getUp().getZ());
+
+    cam.moveCamera();
 
     for(auto light : tagsXML.getLights().getLights()) {
         light->doAction();
     }
 
-    updateDrawMode();
-
     drawGroup(tagsXML.getGroup());
-
-    cam.moveCamera();
 
     elapsed = chekkFPS();
 
@@ -164,11 +173,11 @@ void processKeys(unsigned char c, int xx, int yy) {
             break;
         
         case '+':
-            cam.setRadius(2, '-');
+            cam.setRadius(0.2, '-');
             break;
         
         case '-':
-            cam.setRadius(2, '+');
+            cam.setRadius(0.2, '+');
             break;
         
         case '.':
@@ -180,8 +189,6 @@ void processKeys(unsigned char c, int xx, int yy) {
     
     if (cam.getRadius() <= 0) cam.setRadius(1, '=');
     if (cam.getRadius() >= 500) cam.setRadius(500, '=');
-
-    // cam.convertToSpherical();
 }
 
 
@@ -236,19 +243,27 @@ int main(int argc, char **argv) {
     
     // Init glew
     glewInit();
+    ilInit();
 
     //  OpenGL settings
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_NORMAL_ARRAY);
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glEnable(GL_NORMALIZE);
     glEnable(GL_RESCALE_NORMAL);
-
+    glEnable(GL_TEXTURE_2D);
+    ilEnable(IL_ORIGIN_SET);
+    glEnable(GL_LIGHTING);
+    ilOriginFunc(IL_ORIGIN_LOWER_LEFT);
 
     std::string filename = std::string("../xmlFiles/") + argv[1];
     tagsXML = readXML(filename.c_str());
-    tagsXML.printTree();
+
+    /*for(auto texture : tagsXML.getMapTextures()) {
+        printf("%s %d\n", texture.first.c_str(), texture.second);
+    }*/
 
     cam = tagsXML.getCamera();
     
