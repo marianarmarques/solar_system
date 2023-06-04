@@ -266,12 +266,11 @@ int main(int argc, char **argv) {
     std::string filename = std::string("../xmlFiles/") + argv[1];
     tagsXML = readXML(filename.c_str());
 
-    /*for(auto texture : tagsXML.getMapTextures()) {
+    for(auto texture : tagsXML.getMapTextures()) {
         printf("%s %d\n", texture.first.c_str(), texture.second);
-    }*/
+    }
 
     cam = tagsXML.getCamera();
-    
     cam.convertToSpherical();
     
 
