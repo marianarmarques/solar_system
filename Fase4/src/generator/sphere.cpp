@@ -23,10 +23,10 @@ void Sphere::point_generator() {
                         n13 = Point(sin(new_beta * (i+1)) * cos(new_alfa * j),  cos(new_beta * (i+1)),  sin(new_beta * (i+1)) * sin(new_alfa * j)),
                         n14 = Point(sin(new_beta * i) * cos(new_alfa * j),  cos(new_beta * i),  sin(new_beta * i) * sin(new_alfa * j));
 
-                  Point2D t1 = Point2D(1- (j+1) * div_stacks, 1- i * div_slices),
-                          t2 = Point2D(1- (j+1) * div_stacks, 1- (i+1) * div_slices),
-                          t3 = Point2D(1- j * div_stacks,     1- (i+1) * div_slices),
-                          t4 = Point2D(1- j * div_stacks,     1- i * div_slices);
+                   Point2D t1 = Point2D(1- i * div_slices, 1- (j+1) * div_stacks),
+                           t2 = Point2D(1- (i+1) * div_slices, 1- (j+1) * div_stacks),
+                           t3 = Point2D(1- (i+1) * div_slices, 1- j * div_stacks),
+                           t4 = Point2D(1- i * div_slices, 1- j * div_stacks);
 
                   // 1st triangle
                   addPoint(p1);

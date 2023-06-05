@@ -28,9 +28,9 @@ void Torus::point_generator() {
             addPoint(p2);
             addPoint(p4);
 
-            addNormal(Point(0,1,0));
-            addNormal(Point(0,1,0));
-            addNormal(Point(0,1,0));
+            addNormal(Point(0, 1, 0));
+            addNormal(Point(0, 1, 0));
+            addNormal(Point(0, 1, 0));
 
             addTexture(t1);
             addTexture(t2);

@@ -40,7 +40,7 @@
 				<!--rotate angle=-90 x="1" y="0" z="0" /-->
 			</transform>
 			<models> 
-				<model file="sphere_1_8_8.3d" > <!-- generator sphere 1 8 8 sphere_1_8_8.3d -->
+				<model file="sphere.3d" > <!-- generator sphere 1 8 8 sphere_1_8_8.3d -->
 					<texture file = "earth.jpg" />
 				</model>
 			</models>

@@ -14,7 +14,7 @@ void Camera::convertToSpherical() {
 
     radius = sqrt(pow(position.getX() - lookAt.getX(), 2) + pow(position.getY() - lookAt.getY(), 2) + pow(position.getZ() - lookAt.getZ(), 2));
     alpha = atan2(position.getX(), position.getZ());
-    betha = tan((position.getY() * sin(alpha)) / position.getX());
+    betha = asin((position.getY() - lookAt.getY()) / radius);
 
     if (betha >= M_PI / 2) betha -= M_PI;
     if (betha <= -M_PI / 2) betha += M_PI;

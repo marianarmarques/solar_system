@@ -47,9 +47,9 @@ void drawGroup(Group group){
 
         glEnable(GL_LIGHTING);
         glDrawArrays(GL_TRIANGLES, 0, model.getPoints().size());
-
-        glBindTexture(GL_TEXTURE_2D, 0);
         glDisable(GL_LIGHTING);
+        
+        glBindTexture(GL_TEXTURE_2D, 0);
     }    
 
     for(Group g: group.getGroups()){
