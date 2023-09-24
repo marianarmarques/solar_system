@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/box.cpp" "CMakeFiles/generator.dir/box.cpp.o" "gcc" "CMakeFiles/generator.dir/box.cpp.o.d"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/cone.cpp" "CMakeFiles/generator.dir/cone.cpp.o" "gcc" "CMakeFiles/generator.dir/cone.cpp.o.d"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/generator.cpp" "CMakeFiles/generator.dir/generator.cpp.o" "gcc" "CMakeFiles/generator.dir/generator.cpp.o.d"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/plane.cpp" "CMakeFiles/generator.dir/plane.cpp.o" "gcc" "CMakeFiles/generator.dir/plane.cpp.o.d"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/sphere.cpp" "CMakeFiles/generator.dir/sphere.cpp.o" "gcc" "CMakeFiles/generator.dir/sphere.cpp.o.d"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/torus.cpp" "CMakeFiles/generator.dir/torus.cpp.o" "gcc" "CMakeFiles/generator.dir/torus.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/box.cpp" "CMakeFiles/generator.dir/box.cpp.o" "gcc" "CMakeFiles/generator.dir/box.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/cone.cpp" "CMakeFiles/generator.dir/cone.cpp.o" "gcc" "CMakeFiles/generator.dir/cone.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/generator.cpp" "CMakeFiles/generator.dir/generator.cpp.o" "gcc" "CMakeFiles/generator.dir/generator.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/plane.cpp" "CMakeFiles/generator.dir/plane.cpp.o" "gcc" "CMakeFiles/generator.dir/plane.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/sphere.cpp" "CMakeFiles/generator.dir/sphere.cpp.o" "gcc" "CMakeFiles/generator.dir/sphere.cpp.o.d"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/torus.cpp" "CMakeFiles/generator.dir/torus.cpp.o" "gcc" "CMakeFiles/generator.dir/torus.cpp.o.d"
   )
 
 # Targets to which this target links.

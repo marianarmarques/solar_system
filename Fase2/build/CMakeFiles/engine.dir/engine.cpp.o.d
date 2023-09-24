@@ -1,5 +1,5 @@
 CMakeFiles/engine.dir/engine.cpp.o: \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/engine.cpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/engine.cpp \
  /usr/include/stdc-predef.h /usr/include/GL/glut.h \
  /usr/include/GL/freeglut_std.h /usr/include/GL/gl.h \
  /usr/include/GL/glext.h /usr/include/KHR/khrplatform.h \
@@ -53,7 +53,7 @@ CMakeFiles/engine.dir/engine.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /usr/include/c++/12/bits/std_abs.h \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/point.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/point.hpp \
  /usr/include/c++/12/string /usr/include/c++/12/bits/stringfwd.h \
  /usr/include/c++/12/bits/memoryfwd.h \
  /usr/include/c++/12/bits/char_traits.h \
@@ -154,8 +154,8 @@ CMakeFiles/engine.dir/engine.cpp.o: \
  /usr/include/c++/12/bits/ostream.tcc \
  /usr/include/c++/12/bits/istream.tcc \
  /usr/include/c++/12/bits/sstream.tcc \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/tags.hpp \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/tinyxml2.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/tags.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/tinyxml2.hpp \
  /usr/include/c++/12/climits \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/syslimits.h \
@@ -166,7 +166,7 @@ CMakeFiles/engine.dir/engine.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/c++/12/cstring \
  /usr/include/string.h /usr/include/strings.h \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/point.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/point.hpp \
  /usr/include/c++/12/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \

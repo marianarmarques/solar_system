@@ -223,7 +223,7 @@ void xml_parser(const char* filename) {
 int main(int argc, char** argv) {
 
     if (argc == 2) {
-        string xml = "../" + (string)argv[1];
+        string xml = "../tests/" + (string)argv[1];
         xml_parser(xml.c_str());
 
         // init GLUT and the window

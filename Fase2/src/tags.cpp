@@ -75,7 +75,7 @@ Transforms readTransforms(tinyxml2::XMLNode *group)
             Rotation *r = new Rotation(angle, x, y, z);
             transforms.addTransform(*r);
         }
-        if (strcmp(transformation->Name(), "scale") == 0)
+        if (!strcmp(transformation->Name(), "scale"))
         {
             float x, y, z;
             transformation->QueryFloatAttribute("x", &x);

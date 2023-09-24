@@ -1,0 +1,4 @@
+/home/m_rmarques/University/3ano/CG/ProjectCG/Fase1/build/CMakeFiles/engine.dir
+/home/m_rmarques/University/3ano/CG/ProjectCG/Fase1/build/CMakeFiles/generator.dir
+/home/m_rmarques/University/3ano/CG/ProjectCG/Fase1/build/CMakeFiles/edit_cache.dir
+/home/m_rmarques/University/3ano/CG/ProjectCG/Fase1/build/CMakeFiles/rebuild_cache.dir

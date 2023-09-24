@@ -10,7 +10,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.24.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeSystem.cmake"
-  "/home/m_rmarques/University/3ano/Project_CG/Fase2/src/CMakeLists.txt"
+  "/home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/CMakeLists.txt"
   "/usr/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.24/Modules/CMakeCCompilerABI.c"
   "/usr/share/cmake-3.24/Modules/CMakeCInformation.cmake"

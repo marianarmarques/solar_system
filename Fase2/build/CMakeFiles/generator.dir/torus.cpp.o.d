@@ -1,8 +1,8 @@
 CMakeFiles/generator.dir/torus.cpp.o: \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/torus.cpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/torus.cpp \
  /usr/include/stdc-predef.h \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/torus.hpp \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/point.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/torus.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/point.hpp \
  /usr/include/c++/12/string \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
@@ -154,7 +154,7 @@ CMakeFiles/generator.dir/torus.cpp.o: \
  /usr/include/c++/12/bits/ostream.tcc \
  /usr/include/c++/12/bits/istream.tcc \
  /usr/include/c++/12/bits/sstream.tcc \
- /home/m_rmarques/University/3ano/Project_CG/Fase2/src/headers/primitive.hpp \
+ /home/m_rmarques/University/3ano/CG/Project_CG/Fase2/src/headers/primitive.hpp \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \

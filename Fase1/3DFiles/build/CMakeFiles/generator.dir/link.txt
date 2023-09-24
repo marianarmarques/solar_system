@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/generator.dir/generator.cpp.o CMakeFiles/generator.dir/plane.cpp.o CMakeFiles/generator.dir/box.cpp.o CMakeFiles/generator.dir/sphere.cpp.o CMakeFiles/generator.dir/cone.cpp.o CMakeFiles/generator.dir/torus.cpp.o -o generator 
